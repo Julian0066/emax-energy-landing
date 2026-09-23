@@ -119,28 +119,15 @@ a:hover {
   transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
   text-decoration: none;
   white-space: nowrap;
-  overflow: hidden;
-}
-
-.btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 55%;
-  background: var(--sheen);
-  pointer-events: none;
-  z-index: -1;
 }
 
 .btn:hover {
   text-decoration: none;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .btn:active {
-  transform: translateY(-1px);
+  transform: translateY(0);
 }
 
 .btn__arrow {
@@ -152,31 +139,31 @@ a:hover {
 }
 
 .btn--primary {
-  background: var(--grad-brand);
+  background: linear-gradient(180deg, #0f8a6e, #0a5c4c);
   color: #fff;
-  box-shadow: 0 8px 22px rgba(14, 124, 102, 0.36);
+  box-shadow: 0 4px 12px rgba(93, 74, 46, 0.18);
 }
 
 .btn--primary:hover {
-  box-shadow:
-    0 14px 32px rgba(14, 124, 102, 0.5),
-    0 0 0 6px rgba(14, 124, 102, 0.12);
+  box-shadow: 0 8px 18px rgba(93, 74, 46, 0.22);
 }
 
 .btn--primary:active {
-  box-shadow: 0 6px 16px rgba(14, 124, 102, 0.3);
+  box-shadow: 0 2px 8px rgba(93, 74, 46, 0.18);
 }
 
 .btn--accent {
-  background: var(--grad-accent);
+  background: linear-gradient(180deg, #c87f12, #a8640a);
   color: #fff;
-  box-shadow: 0 8px 22px rgba(233, 162, 59, 0.4);
+  box-shadow: 0 4px 12px rgba(93, 74, 46, 0.18);
 }
 
 .btn--accent:hover {
-  box-shadow:
-    0 14px 32px rgba(233, 162, 59, 0.52),
-    0 0 0 6px rgba(233, 162, 59, 0.14);
+  box-shadow: 0 8px 18px rgba(93, 74, 46, 0.24);
+}
+
+.btn--accent:active {
+  box-shadow: 0 2px 8px rgba(93, 74, 46, 0.18);
 }
 
 .btn--ghost {
@@ -186,7 +173,7 @@ a:hover {
 }
 
 .btn--ghost:hover {
-  background: linear-gradient(90deg, rgba(14, 124, 102, 0.08), rgba(233, 162, 59, 0.08));
+  background: rgba(14, 124, 102, 0.06);
   border-color: var(--color-brand-dark);
 }
 
