@@ -60,6 +60,11 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-sans);
   font-size: 16px;
@@ -1569,6 +1574,17 @@ a:hover {
    RESPONSIVE
    ============================================================ */
 
+/* Móvil / tablet: las imágenes nunca se estiran a todo el ancho,
+   se limitan para no dominar la pantalla. */
+@media (max-width: 1023px) {
+  .hero__visual,
+  .solucion__media {
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}
+
 /* Tablet */
 @media (min-width: 640px) {
   .pains {
@@ -1607,11 +1623,20 @@ a:hover {
   }
 
   .footer__grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 
   .hero {
     padding: 72px 0 48px;
+  }
+}
+
+/* Tablet grande: el pie de página recupera sus 4 columnas */
+@media (min-width: 900px) {
+  .footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
   }
 }
 
