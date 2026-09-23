@@ -26,7 +26,7 @@ emax-energy-landing/
 ├── js/
 │   └── main.js       # Interacciones, validación y reveal
 ├── img/              # Imágenes (placeholders actuales)
-│   ├── hero.jpg
+│   ├── hero.png
 │   ├── solucion.png
 │   ├── avatar-carmen.jpg
 │   ├── avatar-javier.jpg
@@ -41,15 +41,15 @@ La maquetación incluye **6 imágenes** en los puntos clave (hero, solución, te
 
 | Archivo | Tamaño / proporción | Uso |
 |---|---|---|
-| `img/hero.jpg` | 1408×768 · 16:9 | Banner horizontal full-width del hero |
+| `img/hero.png` | 1024×1024 · 1:1 | Imagen principal del hero |
 | `img/solucion.png` | 1024×1536 · 2:3 | Sección solución (columna derecha) |
 | `img/avatar-carmen.jpg` | 400×400 · 1:1 | Testimonio 1 |
 | `img/avatar-javier.jpg` | 400×400 · 1:1 | Testimonio 2 |
 | `img/avatar-laura.jpg` | 400×400 · 1:1 | Testimonio 3 |
 | `img/asesor.jpg` | 400×400 · 1:1 | Formulario |
 
-**Prompt 1 — `hero.jpg`** (vivienda eficiente, atardecer cálido):
-> Photorealistic exterior of a modern two-story Spanish house at golden hour, large rooftop solar panels, warm lights glowing inside the windows, small hedge and garden, clear sky with soft warm sunset tones, professional real estate photography, high detail, no text, no people, no watermark, wide 4:3 composition.
+**Prompt 1 — `hero.png`** (vivienda eficiente, atardecer cálido):
+> Photorealistic exterior of a modern two-story Spanish house at golden hour, large rooftop solar panels, warm lights glowing inside the windows, small hedge and garden, clear sky with soft warm sunset tones, professional real estate photography, high detail, no text, no people, no watermark, square composition.
 
 **Prompt 2 — `solucion.png`** (asesor y clienta en el salón, formato vertical):
 > Photorealistic warm portrait-oriented (2:3) scene of a friendly energy consultant in smart casual clothes sitting on a sofa in a bright Spanish living room, showing a printed electricity bill and a tablet to a smiling middle-aged woman client, coffee cups on the table, natural window light, authentic and trustworthy atmosphere, editorial photography, no text, no logos, vertical 2:3 composition.

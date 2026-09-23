@@ -111,6 +111,187 @@
     updateHeroParallax();
   }
 
+  /* ---------- Modo presentación: el scroll "cambia de pantalla" ----------
+     En escritorio, el panel que deja atrás se desvanece y se aleja ligeramente
+     mientras el siguiente queda revelado debajo: se percibe como un cambio de
+     sección, no como un desplazamiento. Solo cuando el deck está activo. */
+  const deckPanels = document.querySelectorAll(".hero, .section");
+  const deckQuery = window.matchMedia("(min-width: 1024px) and (min-height: 740px)");
+
+  if (deckPanels.length && !prefersReducedMotion) {
+    const clamp = function (value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    };
+
+    let deckTicking = false;
+
+    function updateDeckTransition() {
+      deckTicking = false;
+
+      if (!deckQuery.matches) {
+        deckPanels.forEach(function (panel) {
+          panel.style.opacity = "";
+          panel.style.transform = "";
+        });
+        return;
+      }
+
+      const scrollTop = window.scrollY;
+
+      deckPanels.forEach(function (panel) {
+        const height = panel.offsetHeight;
+        if (!height) return;
+
+        const panelTop = panel.getBoundingClientRect().top + scrollTop;
+        const out = clamp((scrollTop - panelTop) / height, 0, 1);
+
+        if (out <= 0.22) {
+          panel.style.opacity = "";
+          panel.style.transform = "";
+          return;
+        }
+
+        // El cambio arranca pasado el primer tramo y se desarrolla despacio,
+        // con curva eased: transición larga y suave en vez de fade rápido.
+        const start = (out - 0.22) / 0.78;
+        const ease = Math.pow(start, 1.4);
+        panel.style.opacity = (1 - ease).toFixed(3);
+        panel.style.transform =
+          "translate3d(0, " + (-ease * height * 0.05).toFixed(1) + "px, 0) scale(" +
+          (1 - ease * 0.016).toFixed(4) + ")";
+      });
+    }
+
+    const requestDeckTransition = function () {
+      if (!deckTicking) {
+        deckTicking = true;
+        window.requestAnimationFrame(updateDeckTransition);
+      }
+    };
+
+    /* Lenis: scroll sedoso (lerp) sin secuestrar la rueda ni sentirse atascado,
+       más un "encaje" suave cuando la inercia se detiene: un gesto acaba en su
+       sección, pero nunca bloquea el scroll. Solo en el modo deck. */
+    const lastPanelIndex = deckPanels.length - 1;
+
+    let lenis = null;
+    let snapping = false;
+    let lastSpeed = 0;
+    let lastScrollTime = performance.now();
+    let anchorIndex = 0;
+
+    if (typeof window.Lenis === "function" && deckQuery.matches) {
+      document.documentElement.classList.add("js-lenis");
+
+      lenis = new window.Lenis({
+        duration: 1.15,
+        smoothWheel: true,
+        wheelMultiplier: 0.9,
+        easing: function (t) {
+          return Math.min(1, 1.001 - Math.pow(2, -10 * t));
+        }
+      });
+
+      lenis.on("scroll", function (event) {
+        lastSpeed = event.velocity;
+        lastScrollTime = performance.now();
+      });
+
+      function checkSnap() {
+        if (!lenis || snapping) {
+          window.requestAnimationFrame(checkSnap);
+          return;
+        }
+
+        const idle = performance.now() - lastScrollTime;
+        if (idle < 130 && Math.abs(lastSpeed) > 0.4) {
+          window.requestAnimationFrame(checkSnap);
+          return;
+        }
+
+        const y = lenis.scroll;
+        const anchorY = deckPanels[anchorIndex].offsetTop;
+        const delta = y - anchorY;
+        const panelH = deckPanels[anchorIndex].offsetHeight || 1;
+
+        // Cualquier scroll real (adelante o atrás) cambia de panel; solo un
+        // micro-desplazamiento accidental (< 5% de la pantalla) se queda quieto.
+        let steps = 0;
+        if (delta > panelH * 0.05) {
+          steps = 1;
+        } else if (delta < -panelH * 0.05) {
+          steps = -1;
+        }
+        const targetIndex = clamp(anchorIndex + steps, 0, lastPanelIndex);
+        const target = deckPanels[targetIndex].offsetTop;
+
+        if (Math.abs(target - y) > 4) {
+          snapping = true;
+          lenis.scrollTo(target, {
+            duration: 0.6,
+            easing: function (t) {
+              return 1 - Math.pow(1 - t, 3);
+            }
+          });
+          anchorIndex = targetIndex;
+          window.setTimeout(function () {
+            snapping = false;
+          }, 750);
+        }
+
+        window.requestAnimationFrame(checkSnap);
+      }
+
+      function rafDeck(time) {
+        if (lenis) lenis.raf(time);
+        window.requestAnimationFrame(rafDeck);
+      }
+
+      window.requestAnimationFrame(rafDeck);
+      window.requestAnimationFrame(checkSnap);
+
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          if (!lenis) return;
+          const href = link.getAttribute("href");
+          if (!href || href.length < 2) return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          event.preventDefault();
+          snapping = true;
+          lenis.scrollTo(target, { duration: 0.9, offset: 0 });
+          window.setTimeout(function () {
+            snapping = false;
+          }, 1100);
+        });
+      });
+    }
+
+    window.addEventListener("scroll", requestDeckTransition, { passive: true });
+
+    window.addEventListener("resize", function () {
+      if (lenis) {
+        if (!deckQuery.matches) {
+          lenis.destroy();
+          lenis = null;
+          document.documentElement.classList.remove("js-lenis");
+        } else {
+          lenis.resize();
+        }
+      }
+      requestDeckTransition();
+    });
+
+    window.addEventListener("load", function () {
+      if (lenis) lenis.resize();
+      requestDeckTransition();
+    });
+
+    if (!lenis) {
+      requestDeckTransition();
+    }
+  }
+
   /* ---------- Formulario: validación + envío simulado ---------- */
   const form = document.getElementById("lead-form");
   const formError = document.getElementById("form-error");
