@@ -8,18 +8,18 @@
 :root {
   /* Color */
   --color-ink: #e7f2ef;
-  --color-brand: #27c79c;
-  --color-brand-dark: #45d9ae;
+  --color-brand: #18a281;
+  --color-brand-dark: #2fa58e;
   --color-brand-deep: #0b3b36;
   --color-accent: #f2a844;
-  --color-accent-dark: #ffbb5e;
-  --color-surface: #0f2925;
+  --color-accent-dark: #e0861f;
+  --color-surface: #12342e;
   --color-bg: #081c19;
-  --color-tint: #11302a;
+  --color-tint: #0d2622;
   --color-muted: #93aca5;
-  --color-border: #1f3b36;
+  --color-border: #2c5b53;
   --color-error: #ff6b5e;
-  --color-success: #2fd099;
+  --color-success: #2bb993;
   --color-warn: #e8a54d;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
@@ -30,9 +30,9 @@
   --sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 45%);
 
   /* Degradados de marca */
-  --grad-brand: linear-gradient(120deg, #17cd99, #1fb590 48%, #24c8a2);
-  --grad-accent: linear-gradient(120deg, #ffbf63, var(--color-accent) 45%, #e0861f);
-  --border-grad: linear-gradient(120deg, rgba(39, 199, 156, 0.7), rgba(242, 168, 68, 0.6) 50%, rgba(39, 199, 156, 0.7));
+  --grad-brand: linear-gradient(120deg, #12b98b, #0e8f73 50%, #0a5c4c);
+  --grad-accent: linear-gradient(120deg, #e8941f, #d17a0e 50%, #a85f04);
+  --border-grad: linear-gradient(120deg, rgba(24, 162, 129, 0.7), rgba(242, 168, 68, 0.6) 50%, rgba(24, 162, 129, 0.7));
 
   /* Tipografía */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -154,17 +154,17 @@ a:hover {
 .btn--primary {
   background: var(--grad-brand);
   color: #fff;
-  box-shadow: 0 8px 22px rgba(14, 124, 102, 0.36);
+  box-shadow: 0 8px 22px rgba(24, 162, 129, 0.36);
 }
 
 .btn--primary:hover {
   box-shadow:
-    0 14px 32px rgba(14, 124, 102, 0.5),
-    0 0 0 6px rgba(14, 124, 102, 0.12);
+    0 14px 32px rgba(24, 162, 129, 0.5),
+    0 0 0 6px rgba(24, 162, 129, 0.12);
 }
 
 .btn--primary:active {
-  box-shadow: 0 6px 16px rgba(14, 124, 102, 0.3);
+  box-shadow: 0 6px 16px rgba(24, 162, 129, 0.3);
 }
 
 .btn--accent {
@@ -186,7 +186,7 @@ a:hover {
 }
 
 .btn--ghost:hover {
-  background: linear-gradient(90deg, rgba(14, 124, 102, 0.08), rgba(233, 162, 59, 0.08));
+  background: linear-gradient(90deg, rgba(24, 162, 129, 0.08), rgba(233, 162, 59, 0.08));
   border-color: var(--color-brand-dark);
 }
 
@@ -344,7 +344,32 @@ a:hover {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(720px 380px at 92% 0%, rgba(39, 199, 156, 0.14), transparent 62%);
+  background: radial-gradient(720px 380px at 92% 0%, rgba(24, 162, 129, 0.14), transparent 62%);
+}
+
+/* Ritmo entre secciones: hairline ámbar y glows alternados */
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 70%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(242, 168, 68, 0.5), transparent);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+#problema::after,
+#testimonios::after {
+  background: radial-gradient(720px 380px at 8% 0%, rgba(242, 168, 68, 0.16), transparent 62%);
+}
+
+#comparativa::after {
+  background:
+    radial-gradient(720px 380px at 92% 0%, rgba(24, 162, 129, 0.12), transparent 60%),
+    radial-gradient(560px 300px at 6% 100%, rgba(242, 168, 68, 0.12), transparent 55%);
 }
 
 .section--dark::after {
@@ -357,8 +382,8 @@ a:hover {
 
 .section--dark {
   background:
-    radial-gradient(1100px 500px at 85% -10%, rgba(14, 124, 102, 0.55), transparent 60%),
-    radial-gradient(800px 400px at 0% 110%, rgba(233, 162, 59, 0.18), transparent 55%),
+    radial-gradient(1100px 500px at 85% -10%, rgba(24, 162, 129, 0.5), transparent 60%),
+    radial-gradient(800px 400px at 0% 110%, rgba(242, 168, 68, 0.22), transparent 55%),
     var(--color-brand-deep);
   color: #e9f4f1;
 }
@@ -707,7 +732,7 @@ a:hover {
 
 .solucion__checklist li:hover {
   transform: translateX(4px);
-  border-color: rgba(14, 124, 102, 0.35);
+  border-color: rgba(24, 162, 129, 0.35);
   box-shadow: var(--shadow-md);
 }
 
@@ -758,7 +783,9 @@ a:hover {
 }
 
 #beneficios {
-  background: linear-gradient(180deg, #0b211d 0%, #0d2a25 100%);
+  background:
+    radial-gradient(620px 300px at 8% 0%, rgba(242, 168, 68, 0.1), transparent 55%),
+    linear-gradient(180deg, #0b211d 0%, #0d2a25 100%);
 }
 
 /* ---------- Beneficios ---------- */
@@ -793,7 +820,7 @@ a:hover {
   border-radius: 16px;
   background: var(--grad-brand);
   color: #fff;
-  box-shadow: 0 10px 24px rgba(14, 124, 102, 0.32);
+  box-shadow: 0 10px 24px rgba(24, 162, 129, 0.32);
   margin-bottom: 18px;
   transition: transform 0.22s ease;
 }
@@ -838,11 +865,11 @@ a:hover {
   width: 56px;
   height: 56px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  background: linear-gradient(135deg, #e8941f, #b36806);
   color: #fff;
   font-size: 1.4rem;
   font-weight: 800;
-  box-shadow: 0 8px 18px rgba(233, 162, 59, 0.35);
+  box-shadow: 0 8px 18px rgba(184, 104, 6, 0.35);
 }
 
 .step__num::after {
@@ -1067,7 +1094,7 @@ a:hover {
   border-radius: 14px;
   background: var(--grad-brand);
   color: #fff;
-  box-shadow: 0 8px 18px rgba(14, 124, 102, 0.3);
+  box-shadow: 0 8px 18px rgba(24, 162, 129, 0.3);
 }
 
 /* ---------- Testimonios ---------- */
@@ -1184,7 +1211,7 @@ a:hover {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--color-surface);
-  outline: 2px solid rgba(14, 124, 102, 0.35);
+  outline: 2px solid rgba(24, 162, 129, 0.35);
 }
 
 .quote__meta {
@@ -1299,7 +1326,7 @@ a:hover {
   left: 0;
   right: 0;
   height: 46%;
-  background: linear-gradient(180deg, rgba(39, 199, 156, 0.12), rgba(39, 199, 156, 0) 100%);
+  background: linear-gradient(180deg, rgba(24, 162, 129, 0.12), rgba(24, 162, 129, 0) 100%);
   pointer-events: none;
 }
 
@@ -1352,7 +1379,7 @@ a:hover {
 .field textarea:focus {
   outline: none;
   border-color: var(--color-brand);
-  box-shadow: 0 0 0 4px rgba(39, 199, 156, 0.16);
+  box-shadow: 0 0 0 4px rgba(24, 162, 129, 0.16);
   background: var(--color-surface);
 }
 
@@ -1474,7 +1501,7 @@ a:hover {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(720px 300px at 90% 0%, rgba(14, 124, 102, 0.4), transparent 60%),
+    radial-gradient(720px 300px at 90% 0%, rgba(24, 162, 129, 0.4), transparent 60%),
     radial-gradient(520px 260px at 0% 100%, rgba(233, 162, 59, 0.12), transparent 55%);
   pointer-events: none;
 }
