@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Grupo EMAX: revisión gratuita de tu factura de luz y gas. Descubre si estás pagando de más y cuánto puedes ahorrar cada año. Sin permanencia y sin compromiso." />
+  <meta name="theme-color" content="#0b3b36" />
+  <title>EMAX Energía | Ahorra en tu factura de luz y gas</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310a37a'/%3E%3Cpath d='M34 10 18 36h10l-4 18 20-28H33z' fill='%23fff'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Header / Navegación ===== -->
+  <header class="site-header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="brand" aria-label="EMAX Energía, inicio">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13.5 2 5 14h5.5l-2 8L21 9h-6l1.5-7z"/></svg>
+        </span>
+        <span class="brand__name">EMAX<span class="brand__accent">Energía</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#problema">El problema</a></li>
+          <li><a href="#solucion">Solución</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li class="nav-menu__cta"><a href="#contacto" class="btn btn--primary btn--small">Revisión gratis</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content reveal">
+            <p class="hero__badge"><span class="dot"></span> Independientes y certificados · +15.000 hogares asesorados</p>
+            <h1 class="hero__title">Descubre si estás pagando de más por la luz y el gas. <span class="text-highlight">Gratis.</span></h1>
+            <p class="hero__subtitle">La mayoría de clientes que revisamos estaban pagando de más sin saberlo. Analizamos tu factura, tu tarifa y tu consumo actuales y te decimos con números si puedes ahorrar. <strong>Sin permanencia, sin compromiso y sin coste.</strong></p>
+            <div class="hero__actions">
+              <a href="#contacto" class="btn btn--primary btn--lg">Quiero mi revisión gratuita</a>
+              <a href="#como-funciona" class="btn btn--ghost btn--lg">Ver cómo funciona</a>
+            </div>
+            <ul class="hero__trust" aria-label="Ventajas de EMAX">
+              <li><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.5 7L12 17.9 5.7 21l1.5-7L2 9.3l7-.8z"/></svg> 4.9/5 en +1.200 valoraciones</li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Sin permanencia</li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 100% independientes</li>
+            </ul>
+          </div>
+
+          <div class="hero__visual reveal">
+            <img
+              class="hero__img"
+              src="img/hero.jpg"
+              alt="Vivienda eficiente con paneles solares en el tejado y luz cálida al atardecer"
+              width="1408"
+              height="768"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <span class="float-chip hero__chip hero__chip--top">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Revisión 100% gratuita
+            </span>
+            <span class="float-chip hero__chip">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 3 8.6 7 9.9 4-1.3 7-5.3 7-9.9V6l-7-3z"/></svg>
+              Ahorro medio −30 %
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Problema ===== -->
+    <section class="section" id="problema">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__tag">El problema</p>
+          <h2 class="section__title">Estás pagando de más, y probablemente ni lo sabes</h2>
+          <p class="section__lead">Cada año se pierden miles de millones en facturas que podrían ser más baratas. El problema no es solo el precio: es que <strong>nadie revisa tu caso</strong>.</p>
+        </div>
+
+        <ul class="pains">
+          <li class="pains__item reveal">
+            <span class="pains__icon pains__icon--warn">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            </span>
+            <h3 class="pains__title">La factura sube y no sabes por qué</h3>
+            <p class="pains__text">Cambios de precios, peajes y cláusulas nuevas que encarecen tu energía mes a mes, sin que nadie te lo explique ni te lo avise.</p>
+          </li>
+          <li class="pains__item reveal">
+            <span class="pains__icon pains__icon--warn">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/><path d="M12 8v8"/><path d="M12 7h.01"/></svg>
+            </span>
+            <h3 class="pains__title">No sabes si tu tarifa es la adecuada</h3>
+            <p class="pains__text">Miles de tarifas, potencias y discriminaciones horarias que cambian cada trimestre. Contrataste "a ojo" y nadie lo ha vuelto a revisar.</p>
+          </li>
+          <li class="pains__item reveal">
+            <span class="pains__icon pains__icon--warn">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-8-8"/><path d="M12 8V4h4"/><circle cx="16" cy="8" r="1.6"/></svg>
+            </span>
+            <h3 class="pains__title">Comparar por tu cuenta es un agujero de tiempo</h3>
+            <p class="pains__text">Facturas, comercializadoras y letra pequeña: la mayoría lo pospone siempre. Y cada mes que pasa, sigues pagando de más.</p>
+          </li>
+        </ul>
+
+        <p class="section__footnote reveal"><strong>La tarifa regulada se revisa cada 3 meses.</strong> Si la tuya ya no es la más barata, estás regalando dinero cada mes sin enterarte. Lo comprobamos gratis, en tu propia factura.</p>
+      </div>
+    </section>
+
+    <!-- ===== Solución ===== -->
+    <section class="section section--tint" id="solucion">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__tag">La solución</p>
+          <h2 class="section__title">En 15 minutos sabrás si pierdes dinero. Sin mover un dedo.</h2>
+        </div>
+
+        <div class="solucion">
+          <div class="solucion__main reveal">
+            <ul class="solucion__checklist">
+              <li>
+                <span class="check"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                Detectamos si tu potencia contratada es superior a la que necesitas
+              </li>
+              <li>
+                <span class="check"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                Comparamos tu tarifa con las opciones más baratas del mercado
+              </li>
+              <li>
+                <span class="check"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                Cruzamos tu consumo y tus horarios con las mejores horarias
+              </li>
+              <li>
+                <span class="check"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                Recibes un informe con tu ahorro estimado, por escrito y claro
+              </li>
+            </ul>
+
+            <div class="solucion__stats">
+              <div class="stat">
+                <p class="stat__value">−30%</p>
+                <p class="stat__label">de ahorro potencial medio detectado</p>
+              </div>
+              <div class="stat">
+                <p class="stat__value">15 min</p>
+                <p class="stat__label">de revisión, sin papeleo</p>
+              </div>
+              <div class="stat">
+                <p class="stat__value">100%</p>
+                <p class="stat__label">gratuito y sin compromiso</p>
+              </div>
+            </div>
+          </div>
+
+          <figure class="solucion__media reveal">
+            <img
+              src="img/solucion.png"
+              alt="Asesor energético de EMAX revisando una factura de la luz junto a una clienta en su salón"
+              width="1024"
+              height="1536"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Comparativa ===== -->
+    <section class="section" id="comparativa">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__tag">La diferencia</p>
+          <h2 class="section__title">¿Seguir igual o dejar tu energía en manos expertas?</h2>
+          <p class="section__lead">Así cambia tu situación cuando alguien revisa tu energía con criterio y sin intereses comerciales.</p>
+        </div>
+
+        <div class="compare reveal">
+          <div class="compare__col compare__col--sin">
+            <p class="compare__label"><span class="compare__badge compare__badge--sin">Hoy</span> Sin asesoría</p>
+            <ul>
+              <li><span class="compare__x" aria-hidden="true">✕</span>Tarifa elegida "a ojo" y nunca vuelta a revisar</li>
+              <li><span class="compare__x" aria-hidden="true">✕</span>Potencias y peajes que pagas sin enterarte</li>
+              <li><span class="compare__x" aria-hidden="true">✕</span>Cada cambio de precios te pilla siempre por sorpresa</li>
+              <li><span class="compare__x" aria-hidden="true">✕</span>Comparettes, reclamas y pierdes horas: lo dejas correr</li>
+            </ul>
+          </div>
+          <div class="compare__col compare__col--con">
+            <span class="compare__flag">Más elegido</span>
+            <p class="compare__label"><span class="compare__badge compare__badge--con">Con EMAX</span> Sí ahorro</p>
+            <ul>
+              <li><span class="compare__check" aria-hidden="true">✓</span>Tu tarifa optimizada a la opción más barata del mercado</li>
+              <li><span class="compare__check" aria-hidden="true">✓</span>Ajustamos la potencia a lo que realmente usas</li>
+              <li><span class="compare__check" aria-hidden="true">✓</span>Te avisamos cuando cambian los precios y revisamos tu caso</li>
+              <li><span class="compare__check" aria-hidden="true">✓</span>Nosotros analizamos, comparamos y gestionamos el papeleo</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="section__footnote reveal"><strong>Tu revisión es gratuita.</strong> Si no detectamos ahorro, te lo decimos claro y te quedas como estás. Sin permanencia, sin letra pequeña, sin compromiso.</p>
+      </div>
+    </section>
+
+    <!-- ===== Beneficios ===== -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__tag">Beneficios</p>
+          <h2 class="section__title">Menos luz en tu factura, más tranquilidad en tu día</h2>
+          <p class="section__lead">Trabajamos con el mercado entero, no con una comercializadora. Por eso nuestro único objetivo es que ahorres.</p>
+        </div>
+
+        <ul class="benefits">
+          <li class="benefit reveal">
+            <span class="benefit__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 17 9 13l-5 5"/><path d="M21 7l-7 7-3-3"/><path d="M21 3v4h-4"/></svg>
+            </span>
+            <h3 class="benefit__title">Ahorro con números, no promesas</h3>
+            <p class="benefit__text">Te damos el ahorro estimado <strong>por escrito, en tu propia factura</strong>. Si lo ves, decides; si no ves nada, no pierdes nada.</p>
+          </li>
+          <li class="benefit reveal">
+            <span class="benefit__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>
+            </span>
+            <h3 class="benefit__title">Defendemos tu bolsillo, no a nadie más</h3>
+            <p class="benefit__text">No cobramos comisiones de comercializadoras. Nuestro consejo va solo contigo: la tarifa más barata para tu caso, y punto.</p>
+          </li>
+          <li class="benefit reveal">
+            <span class="benefit__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="10" rx="2"/><path d="M8 6V4h8v2"/><path d="M12 11v4"/><path d="M9.5 13h5"/></svg>
+            </span>
+            <h3 class="benefit__title">Cero permanencia</h3>
+            <p class="benefit__text">Sin contratos de años ni condiciones escondidas. Las recomendaciones son tuyas: aplícalas o déjalas, como prefieras.</p>
+          </li>
+          <li class="benefit reveal">
+            <span class="benefit__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <h3 class="benefit__title">Tú pones 15 minutos</h3>
+            <p class="benefit__text">Nosotros analizamos, comparamos, tramitamos y seguimos tu caso. Tú solo te ahorras horas y papeleo.</p>
+          </li>
+          <li class="benefit reveal">
+            <span class="benefit__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <h3 class="benefit__title">Transparencia que se entiende</h3>
+            <p class="benefit__text">Cada recomendación lleva su número: cuánto ahorras y en cuánto tiempo. Sin letra pequeña ni sorpresas a mitad de contrato.</p>
+          </li>
+          <li class="benefit reveal">
+            <span class="benefit__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <h3 class="benefit__title">Un humano que no te suelta</h3>
+            <p class="benefit__text">Un asesor real te acompaña hasta que ves el resultado en tu factura. Y después, te revisamos el caso cada año.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Cómo funciona ===== -->
+    <section class="section section--dark" id="como-funciona">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__tag section__tag--light">Cómo funciona</p>
+          <h2 class="section__title">Del formulario a tu ahorro en 3 pasos</h2>
+          <p class="section__lead">Sin desplazamientos, sin papeleo y sin permanencia. Solo 10 minutos tuyos.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">1</span>
+            <div class="step__card">
+              <h3 class="step__title">Analizamos tu caso</h3>
+              <p class="step__text">Déjanos tus datos en 30 segundos y un asesor te llama en menos de 24&nbsp;h laborables. Sin cuestionarios eternos.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">2</span>
+            <div class="step__card">
+              <h3 class="step__title">Revisamos factura y consumo</h3>
+              <p class="step__text">Estudiamos tu tarifa, potencia contratada y hábitos de consumo para detectar mejoras y sobrecostes.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">3</span>
+            <div class="step__card">
+              <h3 class="step__title">Te proponemos la solución</h3>
+              <p class="step__text">Recibes un plan claro con tu ahorro estimado y los pasos siguientes. Aplícalo o déjalo: ninguna recomendación te ata a nada.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="section__cta reveal">
+          <a href="#contacto" class="btn btn--accent btn--lg">Comenzar mi revisión gratis</a>
+          <p class="section__cta-note">Respondemos en menos de 24 h. Sin compromiso.</p>
+        </div>
+
+        <div class="guarantee reveal">
+          <span class="guarantee__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.6 3 8.6 7 9.9 4-1.3 7-5.3 7-9.9V6l-7-3z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <p><strong>Garantía EMAX:</strong> si tras la revisión tu factura no puede ser más barata, te lo decimos claro y no te proponemos ningún cambio. Te quedas como estás, sin coste y sin compromiso.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Testimonios (prueba social) ===== -->
+    <section class="section section--tint" id="testimonios">
+      <div class="container">
+        <div class="section__head section__head--compact reveal">
+          <p class="section__tag">Testimonios</p>
+          <h2 class="section__title">Personas reales, ahorro real</h2>
+          <div class="rating" aria-label="Valoración media 4.9 sobre 5">
+            <span class="rating__stars" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.5 7L12 17.9 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.5 7L12 17.9 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.5 7L12 17.9 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.5 7L12 17.9 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>
+              <svg class="rating__half" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.5 7L12 17.9 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>
+            </span>
+            <p class="rating__text"><strong>4.9 / 5</strong> · basado en <strong>+1.200</strong> revisiones de clientes</p>
+          </div>
+        </div>
+        <div class="quotes">
+          <figure class="quote reveal">
+            <blockquote>“En dos semanas cambié de tarifa y mi factura bajó casi 50 € al mes. Pude reclamar también un error en la potencia.”</blockquote>
+            <figcaption>
+              <img class="quote__avatar" src="img/avatar-carmen.jpg" alt="Foto de Carmen R." width="96" height="96" loading="lazy" />
+              <div class="quote__meta"><strong>Carmen R.</strong><span>Hogar · Madrid</span></div>
+            </figcaption>
+          </figure>
+          <figure class="quote reveal">
+            <blockquote>“Pensé que la luz era intocable. La revisión fue clarísima y sin presión. Repetiría sin dudarlo.”</blockquote>
+            <figcaption>
+              <img class="quote__avatar" src="img/avatar-javier.jpg" alt="Foto de Javier M." width="96" height="96" loading="lazy" />
+              <div class="quote__meta"><strong>Javier M.</strong><span>Autónomo · Valencia</span></div>
+            </figcaption>
+          </figure>
+          <figure class="quote reveal">
+            <blockquote>“Para una comunidad de vecinos supone centenares de euros al año. Lo mejor es el asesoramiento independiente.”</blockquote>
+            <figcaption>
+              <img class="quote__avatar" src="img/avatar-laura.jpg" alt="Foto de Laura G." width="96" height="96" loading="lazy" />
+              <div class="quote__meta"><strong>Laura G.</strong><span>Comunidad de vecinos · Sevilla</span></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Formulario ===== -->
+    <section class="section section--form" id="contacto">
+      <div class="container form__grid">
+        <div class="form__info reveal">
+          <p class="section__tag">Consulta gratuita</p>
+          <h2 class="section__title">Tu revisión gratis empieza aquí</h2>
+          <p class="section__lead">Rellena el formulario y un asesor te llama en menos de <strong>24 h laborables</strong>. Solo te llevará 30 segundos, y no te obliga a nada.</p>
+          <div class="urgency" role="note">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <p>Las tarifas cambian cada trimestre. Cuanto antes revises tu contrato, <strong>antes empiezas a ahorrar</strong>.</p>
+          </div>
+          <ul class="form__steps">
+            <li><span class="check"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Respuesta en menos de 24 h laborables</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Revisión gratuita, sin permanencia ni compromiso</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Si no hay ahorro posible, te lo decimos claro</li>
+          </ul>
+
+          <div class="advisor reveal">
+            <img src="img/asesor.jpg" alt="Retrato de Carlos Navarro, asesor energético senior de EMAX" width="96" height="96" loading="lazy" />
+            <div class="advisor__meta">
+              <p class="advisor__name">Carlos Navarro</p>
+              <p class="advisor__role">Asesor energético senior · EMAX</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form__card reveal">
+          <form id="lead-form" novalidate>
+            <div class="field">
+              <label for="f-nombre">Nombre <span aria-hidden="true">*</span></label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-telefono">Teléfono <span aria-hidden="true">*</span></label>
+                <input id="f-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="600 000 000" required />
+              </div>
+              <div class="field">
+                <label for="f-email">Email <span aria-hidden="true">*</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-tipo">Tipo de cliente</label>
+              <select id="f-tipo" name="tipo_cliente">
+                <option value="hogar" selected>Hogar</option>
+                <option value="comunidad">Comunidad de vecinos</option>
+                <option value="autonomo">Autónomo</option>
+                <option value="pyme">Pyme</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-mensaje">Mensaje <span class="label-optional">(opcional)</span></label>
+              <textarea id="f-mensaje" name="mensaje" rows="3" placeholder="Cuéntanos brevemente tu situación…"></textarea>
+            </div>
+            <div class="field field--consent">
+              <input id="f-consent" name="consentimiento" type="checkbox" required />
+              <label for="f-consent" class="consent-label">He leído y acepto la <a href="#">política de privacidad</a>. Acepto ser contactado por EMAX para mi consulta. <span aria-hidden="true">*</span></label>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg btn--block" id="submit-btn">
+              <span class="btn__label">Quiero mi revisión gratuita</span>
+              <svg class="btn__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </button>
+
+            <p class="form__privacy"><strong>Sin permanencia · Sin compromiso ·</strong> Si no hay ahorro, te lo decimos y aquí se acaba todo. Protegemos tus datos según el RGPD.</p>
+
+            <p class="form__error" id="form-error" role="alert" hidden>Por favor, revisa los campos marcados en rojo.</p>
+          </form>
+
+          <div class="form__success" id="form-success" hidden>
+            <span class="form__success-icon">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <h3>¡Solicitud recibida!</h3>
+            <p>Gracias por confiar en EMAX Energía. Un asesor te contactará en menos de <strong>24 h laborables</strong> para revisar tu caso.</p>
+            <button type="button" class="btn btn--ghost btn--small" id="reset-form">Enviar otra consulta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#top" class="brand brand--footer" aria-label="EMAX Energía, inicio">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13.5 2 5 14h5.5l-2 8L21 9h-6l1.5-7z"/></svg>
+          </span>
+          <span class="brand__name">EMAX<span class="brand__accent">Energía</span></span>
+        </a>
+        <p class="footer__desc">Asesoramiento energético independiente. Ayudamos a hogares y negocios de toda España a ahorrar en su factura de luz y gas.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Enlaces de la página">
+        <h4 class="footer__title">Empresa</h4>
+        <ul>
+          <li><a href="#solucion">Solución</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#contacto">Revisión gratuita</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <h4 class="footer__title">Contacto</h4>
+        <ul>
+          <li><a href="mailto:hola@emaxenergia.es">hola@emaxenergia.es</a></li>
+          <li><a href="tel:+34900000000">900 000 000</a></li>
+          <li>Calle Energía 12, 28001 Madrid</li>
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Información legal">
+        <h4 class="footer__title">Legal</h4>
+        <ul>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© 2026 Grupo EMAX. Todos los derechos reservados.</p>
+      <p class="footer__disclaimer">Datos y cifras meramente ilustrativos para la prueba técnica.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
