@@ -7,32 +7,32 @@
 /* ---------- Design tokens ---------- */
 :root {
   /* Color */
-  --color-ink: #e7f2ef;
-  --color-brand: #18a281;
-  --color-brand-dark: #2fa58e;
+  --color-ink: #22332f;
+  --color-brand: #0e7c66;
+  --color-brand-dark: #0a5c4c;
   --color-brand-deep: #0b3b36;
-  --color-accent: #f2a844;
-  --color-accent-dark: #e0861f;
-  --color-surface: #12342e;
-  --color-bg: #081c19;
-  --color-tint: #0d2622;
-  --color-muted: #93aca5;
-  --color-border: #2c5b53;
-  --color-error: #ff6b5e;
-  --color-success: #2bb993;
-  --color-warn: #e8a54d;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
-  --shadow-xl: 0 36px 90px rgba(0, 0, 0, 0.6);
+  --color-accent: #e9a23b;
+  --color-accent-dark: #d18a1f;
+  --color-surface: #ffffff;
+  --color-bg: #f6f1e6;
+  --color-tint: #f0e8d6;
+  --color-muted: #5d6f68;
+  --color-border: #e0d5bf;
+  --color-error: #c0392b;
+  --color-success: #1e8e6e;
+  --color-warn: #b57014;
+  --shadow-sm: 0 2px 8px rgba(93, 74, 46, 0.07);
+  --shadow-md: 0 10px 30px rgba(93, 74, 46, 0.1);
+  --shadow-lg: 0 24px 60px rgba(93, 74, 46, 0.16);
+  --shadow-xl: 0 36px 90px rgba(93, 74, 46, 0.2);
 
   /* Brillo superior para botones y tarjetas */
-  --sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 45%);
+  --sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 45%);
 
   /* Degradados de marca */
-  --grad-brand: linear-gradient(120deg, #12b98b, #0e8f73 50%, #0a5c4c);
-  --grad-accent: linear-gradient(120deg, #e8941f, #d17a0e 50%, #a85f04);
-  --border-grad: linear-gradient(120deg, rgba(24, 162, 129, 0.7), rgba(242, 168, 68, 0.6) 50%, rgba(24, 162, 129, 0.7));
+  --grad-brand: linear-gradient(120deg, #15c08f, #0e7c66 48%, #0a5c4c);
+  --grad-accent: linear-gradient(120deg, #f2ae4d, #e9a23b 45%, #c47c14);
+  --border-grad: linear-gradient(120deg, rgba(14, 124, 102, 0.55), rgba(233, 162, 59, 0.55) 50%, rgba(14, 124, 102, 0.55));
 
   /* Tipografía */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -70,7 +70,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-ink);
-  background: linear-gradient(180deg, var(--color-bg), #041311);
+  background: linear-gradient(180deg, var(--color-bg), #f2e9d7);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -154,17 +154,17 @@ a:hover {
 .btn--primary {
   background: var(--grad-brand);
   color: #fff;
-  box-shadow: 0 8px 22px rgba(24, 162, 129, 0.36);
+  box-shadow: 0 8px 22px rgba(14, 124, 102, 0.36);
 }
 
 .btn--primary:hover {
   box-shadow:
-    0 14px 32px rgba(24, 162, 129, 0.5),
-    0 0 0 6px rgba(24, 162, 129, 0.12);
+    0 14px 32px rgba(14, 124, 102, 0.5),
+    0 0 0 6px rgba(14, 124, 102, 0.12);
 }
 
 .btn--primary:active {
-  box-shadow: 0 6px 16px rgba(24, 162, 129, 0.3);
+  box-shadow: 0 6px 16px rgba(14, 124, 102, 0.3);
 }
 
 .btn--accent {
@@ -186,7 +186,7 @@ a:hover {
 }
 
 .btn--ghost:hover {
-  background: linear-gradient(90deg, rgba(24, 162, 129, 0.08), rgba(233, 162, 59, 0.08));
+  background: linear-gradient(90deg, rgba(14, 124, 102, 0.08), rgba(233, 162, 59, 0.08));
   border-color: var(--color-brand-dark);
 }
 
@@ -209,10 +209,10 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(8, 28, 25, 0.82);
+  background: rgba(246, 241, 230, 0.86);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(31, 59, 54, 0.8);
+  border-bottom: 1px solid rgba(224, 213, 191, 0.85);
 }
 
 .header__inner {
@@ -344,7 +344,7 @@ a:hover {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(720px 380px at 92% 0%, rgba(24, 162, 129, 0.14), transparent 62%);
+  background: radial-gradient(720px 380px at 92% 0%, rgba(14, 124, 102, 0.07), transparent 62%);
 }
 
 /* Ritmo entre secciones: hairline ámbar y glows alternados */
@@ -356,20 +356,20 @@ a:hover {
   transform: translateX(-50%);
   width: min(720px, 70%);
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(242, 168, 68, 0.5), transparent);
-  opacity: 0.55;
+  background: linear-gradient(90deg, transparent, rgba(233, 162, 59, 0.5), transparent);
+  opacity: 0.4;
   pointer-events: none;
 }
 
 #problema::after,
 #testimonios::after {
-  background: radial-gradient(720px 380px at 8% 0%, rgba(242, 168, 68, 0.16), transparent 62%);
+  background: radial-gradient(720px 380px at 8% 0%, rgba(233, 162, 59, 0.1), transparent 62%);
 }
 
 #comparativa::after {
   background:
-    radial-gradient(720px 380px at 92% 0%, rgba(24, 162, 129, 0.12), transparent 60%),
-    radial-gradient(560px 300px at 6% 100%, rgba(242, 168, 68, 0.12), transparent 55%);
+    radial-gradient(720px 380px at 92% 0%, rgba(14, 124, 102, 0.06), transparent 60%),
+    radial-gradient(560px 300px at 6% 100%, rgba(233, 162, 59, 0.08), transparent 55%);
 }
 
 .section--dark::after {
@@ -382,8 +382,8 @@ a:hover {
 
 .section--dark {
   background:
-    radial-gradient(1100px 500px at 85% -10%, rgba(24, 162, 129, 0.5), transparent 60%),
-    radial-gradient(800px 400px at 0% 110%, rgba(242, 168, 68, 0.22), transparent 55%),
+    radial-gradient(1100px 500px at 85% -10%, rgba(14, 124, 102, 0.5), transparent 60%),
+    radial-gradient(800px 400px at 0% 110%, rgba(233, 162, 59, 0.22), transparent 55%),
     var(--color-brand-deep);
   color: #e9f4f1;
 }
@@ -732,7 +732,7 @@ a:hover {
 
 .solucion__checklist li:hover {
   transform: translateX(4px);
-  border-color: rgba(24, 162, 129, 0.35);
+  border-color: rgba(14, 124, 102, 0.35);
   box-shadow: var(--shadow-md);
 }
 
@@ -784,8 +784,8 @@ a:hover {
 
 #beneficios {
   background:
-    radial-gradient(620px 300px at 8% 0%, rgba(242, 168, 68, 0.1), transparent 55%),
-    linear-gradient(180deg, #0b211d 0%, #0d2a25 100%);
+    radial-gradient(620px 300px at 8% 0%, rgba(233, 162, 59, 0.09), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f6efdf 100%);
 }
 
 /* ---------- Beneficios ---------- */
@@ -820,7 +820,7 @@ a:hover {
   border-radius: 16px;
   background: var(--grad-brand);
   color: #fff;
-  box-shadow: 0 10px 24px rgba(24, 162, 129, 0.32);
+  box-shadow: 0 10px 24px rgba(14, 124, 102, 0.32);
   margin-bottom: 18px;
   transition: transform 0.22s ease;
 }
@@ -919,7 +919,7 @@ a:hover {
 }
 
 .compare__col--sin {
-  background: linear-gradient(180deg, var(--color-surface), #0c2621);
+  background: linear-gradient(180deg, #ffffff, #f8f2e6);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
 }
@@ -1094,7 +1094,7 @@ a:hover {
   border-radius: 14px;
   background: var(--grad-brand);
   color: #fff;
-  box-shadow: 0 8px 18px rgba(24, 162, 129, 0.3);
+  box-shadow: 0 8px 18px rgba(14, 124, 102, 0.3);
 }
 
 /* ---------- Testimonios ---------- */
@@ -1211,7 +1211,7 @@ a:hover {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--color-surface);
-  outline: 2px solid rgba(24, 162, 129, 0.35);
+  outline: 2px solid rgba(14, 124, 102, 0.35);
 }
 
 .quote__meta {
@@ -1326,7 +1326,7 @@ a:hover {
   left: 0;
   right: 0;
   height: 46%;
-  background: linear-gradient(180deg, rgba(24, 162, 129, 0.12), rgba(24, 162, 129, 0) 100%);
+  background: linear-gradient(180deg, rgba(14, 124, 102, 0.12), rgba(14, 124, 102, 0) 100%);
   pointer-events: none;
 }
 
@@ -1379,14 +1379,14 @@ a:hover {
 .field textarea:focus {
   outline: none;
   border-color: var(--color-brand);
-  box-shadow: 0 0 0 4px rgba(24, 162, 129, 0.16);
+  box-shadow: 0 0 0 4px rgba(14, 124, 102, 0.16);
   background: var(--color-surface);
 }
 
 .field select {
   appearance: none;
   -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2393aca5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235d6f68' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   padding-right: 42px;
@@ -1501,7 +1501,7 @@ a:hover {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(720px 300px at 90% 0%, rgba(24, 162, 129, 0.4), transparent 60%),
+    radial-gradient(720px 300px at 90% 0%, rgba(14, 124, 102, 0.4), transparent 60%),
     radial-gradient(520px 260px at 0% 100%, rgba(233, 162, 59, 0.12), transparent 55%);
   pointer-events: none;
 }
