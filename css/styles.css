@@ -1574,10 +1574,15 @@ a:hover {
    RESPONSIVE
    ============================================================ */
 
-/* Móvil / tablet: las imágenes nunca se estiran a todo el ancho,
-   se limitan para no dominar la pantalla. */
+/* Móvil / tablet: el hero va a sangre (sin contenedor), la imagen de la
+   solución se limita para no dominar la pantalla. */
 @media (max-width: 1023px) {
-  .hero__visual,
+  .hero__visual {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
   .solucion__media {
     width: 100%;
     max-width: 520px;
