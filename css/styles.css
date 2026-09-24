@@ -1333,12 +1333,18 @@ h4 {
 .quotes-slider__viewport {
   overflow: hidden;
   border-radius: var(--radius-lg);
-  margin-top: 22px;
+  margin: 22px auto 0;
+  max-width: 840px;
 }
 
 .quotes {
   display: flex;
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.quotes-slider__controls {
+  max-width: 840px;
+  margin: 22px auto 0;
 }
 
 .quote {
@@ -1347,11 +1353,11 @@ h4 {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 30px 34px;
+  padding: 40px 46px;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 22px;
   margin: 0;
   min-height: 100%;
 }
@@ -1374,7 +1380,8 @@ h4 {
 }
 
 .quote blockquote {
-  font-size: 1.02rem;
+  font-size: 1.14rem;
+  line-height: 1.7;
   color: var(--color-ink);
   font-weight: 500;
   padding-top: 10px;
@@ -1384,7 +1391,7 @@ h4 {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding-top: 16px;
+  padding-top: 18px;
   border-top: 1px solid var(--color-border);
 }
 
