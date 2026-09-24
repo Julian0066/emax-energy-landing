@@ -1997,6 +1997,13 @@ h4 {
     z-index: 0;
   }
 
+  .hero__title,
+  .hero__subtitle,
+  .hero__actions {
+    position: relative;
+    z-index: 1;
+  }
+
   .hero__title {
     order: 1;
     animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
