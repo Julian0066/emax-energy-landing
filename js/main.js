@@ -99,6 +99,50 @@
     })();
   }
 
+  /* ---------- Contadores animados de la banda de resultados ---------- */
+  (function () {
+    const statValues = document.querySelectorAll(".hero__stat-value");
+    if (!statValues.length || prefersReducedMotion) return;
+    const fmt = new Intl.NumberFormat("es-ES");
+
+    function animate(el) {
+      const text = el.textContent.trim();
+      const m = text.match(/^(\d[\d.,]*)(.*)$/);
+      if (!m) return;
+      const target = parseFloat(m[1].replace(/[.,](?=\d{3})/g, ""));
+      if (!isFinite(target)) return;
+      const suffix = m[2];
+      const duration = 1300;
+      const start = performance.now();
+
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt.format(Math.round(target * eased)) + suffix;
+        if (p < 1) {
+          window.requestAnimationFrame(tick);
+        }
+      }
+      window.requestAnimationFrame(tick);
+    }
+
+    const io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    statValues.forEach(function (el) {
+      io.observe(el);
+    });
+  })();
+
   /* ---------- Navegación móvil ---------- */
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");
