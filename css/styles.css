@@ -1314,6 +1314,7 @@ h4 {
 }
 .quotes-slider {
   position: relative;
+  min-width: 0;
 }
 
 .quotes-slider__viewport {
@@ -1321,10 +1322,13 @@ h4 {
   border-radius: var(--radius-lg);
   margin: 22px auto 0;
   max-width: 840px;
+  width: 100%;
+  min-width: 0;
 }
 
 .quotes {
   display: flex;
+  min-width: 0;
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -1336,6 +1340,7 @@ h4 {
 .quote {
   position: relative;
   flex: 0 0 100%;
+  min-width: 0;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -1598,8 +1603,13 @@ h4 {
 
 .testimonios__grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(32px, 6vw, 72px);
   align-items: center;
+}
+
+.testimonios__main {
+  min-width: 0;
 }
 
 .testimonios__aside {
@@ -2115,7 +2125,7 @@ h4 {
   }
 
   .testimonios__grid {
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   }
 
   .hero__visual {
