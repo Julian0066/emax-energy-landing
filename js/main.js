@@ -6,6 +6,99 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
+  /* ---------- Carrusel de reseñas ---------- */
+  const quotesSlider = document.querySelector(".quotes-slider");
+  if (quotesSlider) {
+    (function () {
+      const track = quotesSlider.querySelector(".quotes");
+      const slides = Array.prototype.slice.call(
+        quotesSlider.querySelectorAll(".quote")
+      );
+      const prevBtn = quotesSlider.querySelector(".quotes-slider__btn--prev");
+      const nextBtn = quotesSlider.querySelector(".quotes-slider__btn--next");
+      const dotsWrap = quotesSlider.querySelector(".quotes-slider__dots");
+      const total = slides.length;
+
+      if (!track || total < 2) return;
+
+      let index = 0;
+
+      function render() {
+        index = (index + total) % total;
+        track.style.transform = "translateX(-" + index * 100 + "%)";
+        Array.prototype.forEach.call(
+          dotsWrap.children,
+          function (dot, k) {
+            dot.classList.toggle("is-active", k === index);
+            dot.setAttribute("aria-current", k === index ? "true" : "false");
+          }
+        );
+      }
+
+      if (dotsWrap) {
+        for (let i = 0; i < total; i++) {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "quotes-slider-dot";
+          dot.setAttribute("aria-label", "Ir a la reseña " + (i + 1));
+          dot.addEventListener("click", function () {
+            index = i;
+            render();
+          });
+          dotsWrap.appendChild(dot);
+        }
+      }
+
+      prevBtn.addEventListener("click", function () {
+        index -= 1;
+        render();
+      });
+      nextBtn.addEventListener("click", function () {
+        index += 1;
+        render();
+      });
+
+      const autoplayMs = 6500;
+      let autoplay = null;
+
+      function startAutoplay() {
+        if (prefersReducedMotion || autoplay) return;
+        autoplay = window.setInterval(function () {
+          index += 1;
+          render();
+        }, autoplayMs);
+      }
+
+      function stopAutoplay() {
+        if (autoplay) {
+          window.clearInterval(autoplay);
+          autoplay = null;
+        }
+      }
+
+      quotesSlider.addEventListener("mouseenter", stopAutoplay);
+      quotesSlider.addEventListener("mouseleave", startAutoplay);
+
+      // Deslizar en pantallas con puntero
+      let startX = null;
+      quotesSlider.addEventListener("pointerdown", function (event) {
+        startX = event.clientX;
+      });
+      quotesSlider.addEventListener("pointerup", function (event) {
+        if (startX === null) return;
+        const dx = event.clientX - startX;
+        if (Math.abs(dx) > 40) {
+          index += dx < 0 ? 1 : -1;
+          render();
+        }
+        startX = null;
+      });
+
+      render();
+      startAutoplay();
+    })();
+  }
+
   /* ---------- Navegación móvil ---------- */
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");

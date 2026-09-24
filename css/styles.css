@@ -1326,22 +1326,34 @@ h4 {
 .urgency p {
   font-size: 0.95rem;
 }
+.quotes-slider {
+  position: relative;
+}
+
+.quotes-slider__viewport {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin-top: 22px;
+}
+
 .quotes {
-  display: grid;
-  gap: 20px;
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .quote {
   position: relative;
+  flex: 0 0 100%;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 26px;
+  border-radius: var(--radius-lg);
+  padding: 30px 34px;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   gap: 18px;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  margin: 0;
+  min-height: 100%;
 }
 
 .quote::before {
@@ -1359,11 +1371,6 @@ h4 {
   text-align: center;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(14, 43, 41, 0.1);
-}
-
-.quote:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
 }
 
 .quote blockquote {
@@ -1403,6 +1410,66 @@ h4 {
 
 .quote__meta strong {
   color: var(--color-brand-dark);
+}
+
+.quotes-slider__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.quotes-slider__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-brand-dark);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.quotes-slider__btn:hover {
+  background: var(--color-brand-dark);
+  border-color: var(--color-brand-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.quotes-slider__btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.quotes-slider__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.quotes-slider__dots .quotes-slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  background: rgba(14, 124, 102, 0.22);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.quotes-slider__dots .quotes-slider-dot.is-active {
+  width: 26px;
+  background: var(--color-accent);
+}
+
+.quotes-slider-dot:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 /* ---------- Asesor (formulario) ---------- */
@@ -1768,10 +1835,6 @@ h4 {
     grid-column: 1 / -1;
   }
 
-  .quotes {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .compare {
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
@@ -2005,8 +2068,7 @@ h4 {
 
   .pains,
   .benefits,
-  .steps,
-  .quotes {
+  .steps {
     gap: 14px;
   }
 
