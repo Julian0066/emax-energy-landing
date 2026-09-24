@@ -115,7 +115,7 @@
      En escritorio, el panel que deja atrás se desvanece y se aleja ligeramente
      mientras el siguiente queda revelado debajo: se percibe como un cambio de
      sección, no como un desplazamiento. Solo cuando el deck está activo. */
-  const deckPanels = document.querySelectorAll(".hero, .section");
+  const deckPanels = document.querySelectorAll(".hero, .section, .site-footer");
   const deckQuery = window.matchMedia("(min-width: 1024px) and (min-height: 740px)");
 
   if (deckPanels.length && !prefersReducedMotion) {

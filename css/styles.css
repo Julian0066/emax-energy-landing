@@ -647,7 +647,8 @@ h4 {
 
 .hero__img {
   display: block;
-  width: 100%;
+  width: 118%;
+  max-width: none;
   height: auto;
   transform: scale(1.06);
   transform-origin: center;
@@ -1965,7 +1966,7 @@ h4 {
   }
 
   .hero__visual img {
-    max-height: 62svh;
+    max-height: 72svh;
     width: auto;
     margin-inline: auto;
   }
