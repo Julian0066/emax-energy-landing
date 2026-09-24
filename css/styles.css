@@ -1525,17 +1525,6 @@ h4 {
   outline-offset: -2px;
 }
 
-/* ---------- CTA flotante móvil ---------- */
-.mobile-cta {
-  display: none;
-}
-
-.mobile-cta.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
 .quotes-slider__controls {
   display: flex;
   align-items: center;
@@ -1983,44 +1972,6 @@ h4 {
     width: 100%;
     max-width: 520px;
     margin-inline: auto;
-  }
-}
-
-/* CTA flotante: solo móvil */
-@media (max-width: 767px) {
-  .mobile-cta {
-    display: block;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 60;
-    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
-    background: linear-gradient(180deg, rgba(239, 245, 241, 0),
-      rgba(240, 234, 216, 0.92) 30%, var(--color-bg) 65%);
-  }
-
-  .mobile-cta__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 15px 18px;
-    border-radius: 999px;
-    background: linear-gradient(180deg, #0f8a6e, #0a5c4c);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
-    box-shadow: 0 10px 30px rgba(11, 59, 54, 0.35);
-  }
-
-  .mobile-cta__label strong {
-    color: #ffe1a3;
-  }
-
-  .site-footer {
-    padding-bottom: calc(84px + env(safe-area-inset-bottom));
   }
 }
 

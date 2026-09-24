@@ -143,22 +143,6 @@
     });
   })();
 
-  /* ---------- CTA flotante móvil: se oculta sobre el formulario ---------- */
-  const mobileCta = document.querySelector(".mobile-cta");
-  const formSection = document.getElementById("contacto");
-
-  if (mobileCta && formSection && "IntersectionObserver" in window) {
-    const ctaObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          mobileCta.classList.toggle("is-hidden", entry.isIntersecting);
-        });
-      },
-      { threshold: 0.08 }
-    );
-    ctaObserver.observe(formSection);
-  }
-
   /* ---------- Navegación móvil ---------- */
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");

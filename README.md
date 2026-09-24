@@ -48,21 +48,21 @@ emax-energy-landing/
 6. **Cómo funciona** — los 3 pasos exigidos + **garantía EMAX** (reversión de riesgo: si no hay ahorro, nada que pagar).
 7. **Prueba social** — valoración 4.9/5 + **carrusel de reseñas** con testimonios y cifras concretas.
 8. **FAQ** — 5 preguntas que neutralizan las objeciones típicas (corte de suministro, ahorro real, permanencia, precio, factura) en acordeón nativo (`<details>`), sin JS.
-9. **Formulario** — nombre, teléfono, email, tipo de cliente, mensaje y botón de envío; urgencia temporal, tranquilizadores, microcopy de riesgo revertido, consentimiento RGPD y **CTA flotante en móvil** que acompaña al usuario durante todo el scroll.
+9. **Formulario** — nombre, teléfono, email, tipo de cliente, mensaje y botón de envío; urgencia temporal, tranquilizadores, microcopy de riesgo revertido y consentimiento RGPD.
 10. **Footer** — marca, navegación simulada, contacto e información legal simulada.
 
 ## 🎨 Decisiones de diseño (orientadas a conversión)
 
 - **Color**: verde petrol/teal (confianza + sostenibilidad) y ámbar como acento de "ahorro/energía"; el CTA primario es el elemento de mayor contraste.
 - **Tipografía**: Inter (cuerpo) + Manrope (titulares), jerarquía clara del 400 al 800.
-- **Un objetivo, un CTA**: todas las rutas llevan al formulario de consulta gratuita; CTA primario repetido en header, hero, cierre de "cómo funciona" y CTA flotante móvil.
+- **Un objetivo, un CTA**: todas las rutas llevan al formulario de consulta gratuita; CTA primario repetido en header, hero y cierre de "cómo funciona".
 - **Cifras y prueba social**: números en el hero ("+250 €/año"), banda de resultados, ratings y testimonios con euros — porque los datos concretos convierten más que los adjetivos.
 - **Reversión de riesgo**: "Gratis · Sin permanencia · Sin compromiso" y garantía EMAX por escrito.
 - **Objeción resuelta antes de la conversión**: la FAQ va justo antes del formulario.
 - **Rendimiento como palanca de conversión**: imágenes convertidas y comprimidas a JPG (hero pasa de ~930 KB a 60 KB y la de solución de ~1,3 MB a 68 KB), `loading="lazy"`, `fetchpriority="high"` en el hero.
 - **Texturas sutiles**: puntos en degradé en todas las secciones (familia visual coherente, muy suaves para no competir con el contenido).
 - **Modo presentación**: en escritorio alto, cada sección encaja en la pantalla con scroll encadenado (Lenis); el footer es la pantalla final permanente. En móvil/tarjetas con `prefers-reduced-motion` se mantiene el scroll normal.
-- **Responsive**: mobile-first, CTA flotante solo en móvil, carrusel con gesto táctil y autoplay (que respeta `prefers-reduced-motion`).
+- **Responsive**: mobile-first, carrusel con gesto táctil y autoplay (que respeta `prefers-reduced-motion`).
 
 ## 🤖 Uso de IA
 
