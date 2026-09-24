@@ -116,9 +116,7 @@
      mientras el siguiente queda revelado debajo: se percibe como un cambio de
      sección, no como un desplazamiento. Solo cuando el deck está activo. */
   const deckPanels = document.querySelectorAll(".hero, .section");
-  // [DESACTIVADO temporalmente] Para reactivar el modo presentación, restaura:
-  //   const deckQuery = window.matchMedia("(min-width: 1024px) and (min-height: 740px)");
-  const deckQuery = window.matchMedia("(min-width: 0px) and (max-width: 0px)");
+  const deckQuery = window.matchMedia("(min-width: 1024px) and (min-height: 740px)");
 
   if (deckPanels.length && !prefersReducedMotion) {
     const clamp = function (value, min, max) {
