@@ -465,10 +465,35 @@
       }
 
       const originalLabel = submitBtn.querySelector(".btn__label");
-      originalLabel.textContent = "Enviando…";
+
+      const data = {
+        nombre: form.nombre.value.trim(),
+        telefono: form.telefono.value.trim(),
+        email: form.email.value.trim(),
+        tipo_cliente: form.tipo_cliente.value,
+        mensaje: form.mensaje.value.trim()
+      };
+
+      const subject =
+        "Solicitud de revisión gratuita de EMAX — " + data.nombre;
+      const body =
+        "Nueva solicitud desde la web\n\n" +
+        "Nombre: " + data.nombre + "\n" +
+        "Teléfono: " + data.telefono + "\n" +
+        "Email: " + data.email + "\n" +
+        "Tipo de cliente: " + data.tipo_cliente + "\n" +
+        "Mensaje: " + (data.mensaje || "-") + "\n";
+
+      const mailto =
+        "mailto:hola@emaxenergia.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      originalLabel.textContent = "Abriendo tu correo…";
       submitBtn.disabled = true;
 
       window.setTimeout(function () {
+        window.location.href = mailto;
         form.hidden = true;
         formSuccess.hidden = false;
         formSuccess.scrollIntoView({
@@ -478,7 +503,7 @@
         submitBtn.disabled = false;
         originalLabel.textContent = "Quiero mi revisión gratuita";
         form.reset();
-      }, 900);
+      }, 350);
     });
 
     if (resetBtn) {
