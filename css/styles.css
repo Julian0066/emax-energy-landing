@@ -647,16 +647,15 @@ h4 {
 
 .hero__img {
   display: block;
-  width: 118%;
-  max-width: none;
+  width: 100%;
   height: auto;
-  transform: scale(1.06);
+  transform: scale(1.18);
   transform-origin: center;
   transition: transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero__visual.is-visible .hero__img {
-  transform: scale(1);
+  transform: scale(1.1);
 }
 
 @keyframes float {
@@ -1966,7 +1965,7 @@ h4 {
   }
 
   .hero__visual img {
-    max-height: 72svh;
+    max-height: 62svh;
     width: auto;
     margin-inline: auto;
   }
