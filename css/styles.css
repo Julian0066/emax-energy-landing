@@ -549,26 +549,12 @@ h4 {
 .hero__content {
   position: relative;
   z-index: 1;
-  max-width: 720px;
-}
-
-.hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 18px;
-  border-radius: 999px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--color-ink);
+  max-width: 780px;
 }
 
 .hero__title {
-  margin-top: 34px;
-  font-size: clamp(2.4rem, 5.8vw, 4rem);
+  margin-top: 0;
+  font-size: clamp(2.4rem, 5.8vw, 4.2rem);
   line-height: 1.04;
   letter-spacing: -0.04em;
   font-weight: 800;
@@ -577,8 +563,8 @@ h4 {
 
 .hero__subtitle {
   margin-top: 26px;
-  max-width: 660px;
-  font-size: 1.15rem;
+  max-width: 720px;
+  font-size: 1.18rem;
   line-height: 1.7;
   color: var(--color-muted);
 }
@@ -1837,8 +1823,8 @@ h4 {
   }
 
   .hero__grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 48px;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 44px;
     align-items: center;
   }
 
