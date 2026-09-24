@@ -2266,19 +2266,19 @@ h4 {
      exactamente un tile del patrón, así el reinicio es invisible. */
   #problema,
   #faq {
-    animation: texture-drift-26 90s linear infinite;
+    animation: texture-drift-26 8s linear infinite;
   }
 
   #solucion {
-    animation: texture-drift-30 110s linear infinite;
+    animation: texture-drift-30 9s linear infinite;
   }
 
   #comparativa {
-    animation: texture-drift-26 100s linear infinite;
+    animation: texture-drift-26 8s linear infinite;
   }
 
   #testimonios {
-    animation: texture-drift-24 80s linear infinite;
+    animation: texture-drift-24 7s linear infinite;
   }
 
   .hero,
