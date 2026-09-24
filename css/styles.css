@@ -549,7 +549,7 @@ h4 {
 .hero__content {
   position: relative;
   z-index: 1;
-  max-width: 620px;
+  max-width: 720px;
 }
 
 .hero__badge {
@@ -577,7 +577,7 @@ h4 {
 
 .hero__subtitle {
   margin-top: 26px;
-  max-width: 580px;
+  max-width: 660px;
   font-size: 1.15rem;
   line-height: 1.7;
   color: var(--color-muted);
@@ -1837,8 +1837,8 @@ h4 {
   }
 
   .hero__grid {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 56px;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
     align-items: center;
   }
 
