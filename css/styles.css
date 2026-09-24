@@ -1618,7 +1618,7 @@ h4 {
   width: min(100%, 430px);
   height: auto;
   filter: drop-shadow(0 26px 34px rgba(14, 43, 41, 0.16));
-  transform: scale(1.35);
+  transform: scale(1.6);
   transform-origin: bottom center;
   -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
