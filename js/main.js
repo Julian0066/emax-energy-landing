@@ -227,8 +227,9 @@
 
         if (Math.abs(target - y) > 4) {
           snapping = true;
+          const isFooter = deckPanels[targetIndex].classList.contains("site-footer");
           lenis.scrollTo(target, {
-            duration: 0.6,
+            duration: isFooter ? 1.6 : 0.6,
             easing: function (t) {
               return 1 - Math.pow(1 - t, 3);
             }
@@ -236,7 +237,7 @@
           anchorIndex = targetIndex;
           window.setTimeout(function () {
             snapping = false;
-          }, 750);
+          }, isFooter ? 1850 : 750);
         }
 
         window.requestAnimationFrame(checkSnap);
