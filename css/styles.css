@@ -1601,25 +1601,45 @@ h4 {
   background-size: 28px 28px, 100% 100%, 100% 100%;
 }
 
-.section--tint {
+.testimonios__grid {
+  display: grid;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+}
+
+.testimonios__photo {
   position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(14, 43, 41, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  background:
+    radial-gradient(rgba(14, 124, 102, 0.10) 1px, transparent 1.7px),
+    radial-gradient(420px 300px at 82% 8%, rgba(233, 162, 59, 0.16), transparent 62%),
+    linear-gradient(165deg, #dde8e1 0%, #f1ead9 70%);
+  background-size: 28px 28px, 100% 100%, 100% 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-.section__person {
-  position: absolute;
-  right: clamp(8px, calc(50vw - 585px), 150px);
-  top: 145px;
-  width: clamp(180px, 20vw, 260px);
-  z-index: 3;
-  pointer-events: none;
-}
-
-.section__person img {
+.testimonios__photo img {
   display: block;
   width: 100%;
-  height: auto;
-  animation: float 7s ease-in-out infinite;
-  filter: drop-shadow(0 24px 34px rgba(14, 43, 41, 0.22));
+  height: 100%;
+  object-fit: contain;
+}
+
+.testimonios__caption {
+  margin-top: 16px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .form__grid {
@@ -1941,9 +1961,6 @@ h4 {
   .hero__visual.is-visible {
     animation: none;
   }
-  .section__person img {
-    animation: none;
-  }
   .compare__brands-track {
     animation: none;
     width: 100%;
@@ -1965,8 +1982,9 @@ h4 {
 /* Móvil / tablet: el hero va a sangre (sin contenedor), la imagen de la
    solución se limita para no dominar la pantalla. */
 @media (max-width: 1023px) {
-  .section__person {
-    display: none;
+  .testimonios__photo {
+    max-width: 480px;
+    margin-inline: auto;
   }
   .hero__visual {
     width: 100vw;
@@ -2102,6 +2120,10 @@ h4 {
     grid-template-columns: 1.2fr 0.8fr;
     gap: 44px;
     align-items: center;
+  }
+
+  .testimonios__grid {
+    grid-template-columns: 1.05fr 0.95fr;
   }
 
   .hero__visual {
