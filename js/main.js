@@ -404,6 +404,12 @@
           const target = document.querySelector(href);
           if (!target) return;
           event.preventDefault();
+          // El encaje del deck debe saber a qué panel viajamos: si no, al
+          // terminar la animación "recuperaría" el índice antiguo y saltaría.
+          const panelIndex = Array.prototype.indexOf.call(deckPanels, target);
+          if (panelIndex >= 0) {
+            anchorIndex = panelIndex;
+          }
           snapping = true;
           lenis.scrollTo(target, { duration: 0.9, offset: 0 });
           window.setTimeout(function () {
