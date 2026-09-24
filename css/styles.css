@@ -1965,8 +1965,7 @@ h4 {
    solución se limita para no dominar la pantalla. */
 @media (max-width: 1023px) {
   .testimonios__aside {
-    max-width: 380px;
-    margin-inline: auto;
+    display: none;
   }
   .hero__visual {
     width: 100vw;
