@@ -1759,9 +1759,11 @@ a:hover {
 
 /* ---------- Modo "presentación": cada sección encaja en la pantalla ----------
    En escritorio con altura suficiente cada bloque se convierte en una "pantalla"
-   que se alinea al hacer scroll (scroll-snap). En móvil y pantallas bajas o con
-   prefers-reduced-motion se mantiene el scroll normal para no atrapar el contenido. */
-@media (min-width: 1024px) and (min-height: 740px) and (prefers-reduced-motion: no-preference) {
+   que se alinea al hacer scroll. En móvil y pantallas bajas o con
+   prefers-reduced-motion se mantiene el scroll normal.
+   [DESACTIVADO temporalmente] Para reactivar, restaura la media query:
+   @media (min-width: 1024px) and (min-height: 740px) and (prefers-reduced-motion: no-preference) { */
+@media (min-width: 0px) and (max-width: 0px) {
   html {
     scroll-snap-type: none;
     scroll-padding-top: 0;
