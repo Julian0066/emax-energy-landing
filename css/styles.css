@@ -1982,6 +1982,16 @@ h4 {
 
 /* Reseñas compactas en móvil */
 @media (max-width: 640px) {
+  /* En pantallas pequeñas la foto del hero se ve un poco más grande de lo
+     necesario; la recorto ~12% para que respire junto al titular. */
+  .hero__img {
+    transform: scale(1.04);
+  }
+
+  .hero__visual.is-visible .hero__img {
+    transform: scale(0.97);
+  }
+
   .quotes-slider__viewport,
   .quotes-slider__controls {
     margin-top: 18px;
@@ -2232,10 +2242,43 @@ h4 {
 
 /* Modo presentación: en escritorio alto, cada sección se encaja en la
    pantalla al hacer scroll (desactivado con prefers-reduced-motion). */
+/* Texturas en movimiento: el punteado viaja muy despacio. Un ciclo anima
+   exactamente un tile del patrón (26/30px), así el salto al repetir es
+   invisible. Solo en el modo presentación. */
+@keyframes texture-drift-26 {
+  to { background-position: 26px 26px, 0 0; }
+}
+@keyframes texture-drift-30 {
+  to { background-position: 30px 30px, 0 0; }
+}
+@keyframes texture-drift-24 {
+  to { background-position: 24px 24px, 0 0; }
+}
+
+/* Modo presentación: en escritorio alto cada sección encaja en la pantalla al
+   hacer scroll, con un suave scroll-snap (desactivado con prefers-reduced-motion). */
 @media (min-width: 1024px) and (min-height: 740px) and (prefers-reduced-motion: no-preference) {
   html {
-    scroll-snap-type: none;
-    scroll-padding-top: 0;
+    scroll-snap-type: y mandatory;
+  }
+
+  /* Las texturas punteadas viajan muy despacio: una vuelta de la animación es
+     exactamente un tile del patrón, así el reinicio es invisible. */
+  #problema,
+  #faq {
+    animation: texture-drift-26 90s linear infinite;
+  }
+
+  #solucion {
+    animation: texture-drift-30 110s linear infinite;
+  }
+
+  #comparativa {
+    animation: texture-drift-26 100s linear infinite;
+  }
+
+  #testimonios {
+    animation: texture-drift-24 80s linear infinite;
   }
 
   .hero,
