@@ -36,6 +36,7 @@
 
   /* Tipografía */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Manrope", var(--font-sans);
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -87,6 +88,16 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
 :focus-visible {
@@ -394,9 +405,11 @@ a:hover {
 
 .section--dark {
   background:
+    radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1.6px),
     radial-gradient(1100px 500px at 85% -10%, rgba(14, 124, 102, 0.5), transparent 60%),
     radial-gradient(800px 400px at 0% 110%, rgba(233, 162, 59, 0.22), transparent 55%),
     var(--color-brand-deep);
+  background-size: 22px 22px, 100% 100%, 100% 100%, 100% 100%;
   color: #e9f4f1;
 }
 
@@ -555,14 +568,15 @@ a:hover {
 
 .hero__title {
   margin-top: 22px;
-  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 5.8vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 800;
   color: var(--color-ink);
 }
 
 .hero__subtitle {
-  margin-top: 18px;
+  margin-top: 20px;
   max-width: 560px;
   font-size: 1.12rem;
   color: var(--color-muted);
@@ -573,7 +587,7 @@ a:hover {
 }
 
 .hero__actions {
-  margin-top: 30px;
+  margin-top: 32px;
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
@@ -602,6 +616,38 @@ a:hover {
 
 .hero__trust svg {
   color: var(--color-success);
+}
+
+/* Banda de números: confianza por resultados */
+.hero__stats {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-border);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 18px 34px;
+  justify-content: start;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__stat-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-brand-dark);
+  line-height: 1;
+}
+
+.hero__stat-label {
+  font-size: 0.82rem;
+  color: var(--color-muted);
 }
 
 /* Visual del hero — imagen relacionada con energía / ahorro */
@@ -672,6 +718,11 @@ a:hover {
 .pains__item:hover::before,
 .benefit:hover::before {
   opacity: 1;
+}
+
+.benefit--big::before,
+.benefit--cta::before {
+  display: none;
 }
 
 .pains__item:hover {
@@ -801,6 +852,7 @@ a:hover {
 .benefits {
   list-style: none;
   display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -809,15 +861,98 @@ a:hover {
   overflow: hidden;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--shadow-sm);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
+.benefit--big {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    radial-gradient(560px 380px at 90% 0%, rgba(233, 162, 59, 0.28), transparent 60%),
+    linear-gradient(135deg, #0f8a6e, var(--color-brand-deep));
+  color: #fff;
+  box-shadow: var(--shadow-xl);
+}
+
+.benefit--big::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -40px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+}
+
+.benefit--cta {
+  background: linear-gradient(90deg, rgba(233, 162, 59, 0.16), rgba(233, 162, 59, 0.06));
+  border-color: rgba(233, 162, 59, 0.45);
+}
+
+.benefit__link {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--color-ink);
+}
+
+.benefit__link:hover {
+  text-decoration: none;
+}
+
+.benefit__link-icon {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--color-accent-dark);
+  color: #fff;
+  transition: transform 0.22s ease;
+}
+
+.benefit--cta:hover .benefit__link-icon {
+  transform: translateY(-3px) scale(1.05) rotate(-4deg);
+}
+
+.benefit__link-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.benefit__link-text {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.benefit__arrow {
+  flex: none;
+  margin-left: auto;
+  color: var(--color-accent-dark);
+  transition: transform 0.22s ease;
+}
+
+.benefit--cta:hover .benefit__arrow {
+  transform: translateX(6px);
+}
+
 .benefit:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+}
+
+.benefit--big:hover {
+  box-shadow: var(--shadow-xl);
 }
 
 .benefit__icon {
@@ -834,9 +969,31 @@ a:hover {
   transition: transform 0.22s ease;
 }
 
+.benefit--big .benefit__icon {
+  background: var(--grad-accent);
+  box-shadow: 0 12px 28px rgba(233, 162, 59, 0.4);
+}
+
 .benefit:hover .benefit__icon {
   transform: translateY(-3px) scale(1.05) rotate(-3deg);
   background: var(--grad-brand);
+  color: #fff;
+}
+
+.benefit--big:hover .benefit__icon {
+  background: var(--grad-accent);
+}
+
+.benefit__stat {
+  margin-top: auto;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #f6d28a;
+}
+
+.benefit__stat strong {
   color: #fff;
 }
 
@@ -846,9 +1003,20 @@ a:hover {
   letter-spacing: -0.01em;
 }
 
+.benefit--big .benefit__title {
+  color: #fff;
+  font-size: 1.35rem;
+  margin-top: 12px;
+}
+
 .benefit__text {
   color: var(--color-muted);
   font-size: 0.98rem;
+}
+
+.benefit--big .benefit__text {
+  color: #dff3ed;
+  max-width: 46ch;
 }
 
 /* ---------- Cómo funciona ---------- */
@@ -1593,6 +1761,11 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .benefit--big,
+  .benefit--cta {
+    grid-column: 1 / -1;
+  }
+
   .quotes {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1642,6 +1815,23 @@ a:hover {
 @media (min-width: 1024px) {
   .hero {
     padding: 88px 0 96px;
+  }
+
+  /* Bento: tarjeta grande (4) + tarjeta (2) / 3 tarjetas (2+2+2) / CTA ancho */
+  .benefits {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .benefit--big {
+    grid-column: span 4;
+  }
+
+  .benefit:not(.benefit--big):not(.benefit--cta) {
+    grid-column: span 2;
+  }
+
+  .benefit--cta {
+    grid-column: 1 / -1;
   }
 
   .hero__grid {
