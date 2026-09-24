@@ -225,6 +225,14 @@
         const targetIndex = clamp(anchorIndex + steps, 0, lastPanelIndex);
         const target = deckPanels[targetIndex].offsetTop;
 
+        // El footer es la última pantalla: una vez alcanzado, se queda para
+        // siempre (el scroll hacia abajo no lo hace marcharse).
+        if (targetIndex === lastPanelIndex && steps > 0 && y >= target) {
+          anchorIndex = targetIndex;
+          snapping = false;
+          return;
+        }
+
         if (Math.abs(target - y) > 4) {
           snapping = true;
           const isFooter = deckPanels[targetIndex].classList.contains("site-footer");
