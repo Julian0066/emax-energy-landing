@@ -1601,17 +1601,20 @@ h4 {
   background-size: 28px 28px, 100% 100%, 100% 100%;
 }
 
-.form__person {
+.section--tint {
+  position: relative;
+}
+
+.section__person {
   position: absolute;
   right: clamp(8px, calc(50vw - 585px), 150px);
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(210px, 24vw, 330px);
+  top: 145px;
+  width: clamp(180px, 20vw, 260px);
   z-index: 3;
   pointer-events: none;
 }
 
-.form__person img {
+.section__person img {
   display: block;
   width: 100%;
   height: auto;
@@ -1938,7 +1941,7 @@ h4 {
   .hero__visual.is-visible {
     animation: none;
   }
-  .form__person img {
+  .section__person img {
     animation: none;
   }
   .compare__brands-track {
@@ -1962,7 +1965,7 @@ h4 {
 /* Móvil / tablet: el hero va a sangre (sin contenedor), la imagen de la
    solución se limita para no dominar la pantalla. */
 @media (max-width: 1023px) {
-  .form__person {
+  .section__person {
     display: none;
   }
   .hero__visual {
