@@ -6,7 +6,7 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  /* ---------- Carrusel de reseñas ---------- */
+  // Carrusel de reseñas
   const quotesSlider = document.querySelector(".quotes-slider");
   if (quotesSlider) {
     (function () {
@@ -79,7 +79,7 @@
       quotesSlider.addEventListener("mouseenter", stopAutoplay);
       quotesSlider.addEventListener("mouseleave", startAutoplay);
 
-      // Deslizar en pantallas con puntero
+      // Deslizar en pantallas táctiles
       let startX = null;
       quotesSlider.addEventListener("pointerdown", function (event) {
         startX = event.clientX;
@@ -99,7 +99,7 @@
     })();
   }
 
-  /* ---------- Contadores animados de la banda de resultados ---------- */
+  // Contadores animados de la banda de resultados
   (function () {
     const statValues = document.querySelectorAll(".hero__stat-value");
     if (!statValues.length || prefersReducedMotion) return;
@@ -143,7 +143,7 @@
     });
   })();
 
-  /* ---------- Navegación móvil ---------- */
+  // Navegación móvil
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");
 
@@ -173,7 +173,7 @@
     });
   }
 
-  /* ---------- Cabecera con sombra al hacer scroll ---------- */
+  // Sombra del header al hacer scroll
   const header = document.querySelector(".site-header");
 
   function updateHeaderShadow() {
@@ -191,7 +191,7 @@
     updateHeaderShadow();
   }
 
-  /* ---------- Scroll reveal ---------- */
+  // Scroll reveal de secciones
   const revealEls = document.querySelectorAll(".reveal");
 
   if (!prefersReducedMotion && "IntersectionObserver" in window) {
@@ -216,7 +216,7 @@
     });
   }
 
-  /* ---------- Parallax sutil en el visual del hero ---------- */
+  // Parallax sutil del visual en el hero
   const heroSection = document.querySelector(".hero");
   const heroVisual = document.querySelector(".hero__visual");
 
@@ -248,10 +248,8 @@
     updateHeroParallax();
   }
 
-  /* ---------- Modo presentación: el scroll "cambia de pantalla" ----------
-     En escritorio, el panel que deja atrás se desvanece y se aleja ligeramente
-     mientras el siguiente queda revelado debajo: se percibe como un cambio de
-     sección, no como un desplazamiento. Solo cuando el deck está activo. */
+  // Modo presentación: al hacer scroll el panel que deja atrás se desvanece
+  // y se aleja un poco mientras se revela el siguiente. Solo en escritorio.
   const deckPanels = document.querySelectorAll(".hero, .section, .site-footer");
   const deckQuery = window.matchMedia("(min-width: 1024px) and (min-height: 740px)");
 
@@ -306,9 +304,8 @@
       }
     };
 
-    /* Lenis: scroll sedoso (lerp) sin secuestrar la rueda ni sentirse atascado,
-       más un "encaje" suave cuando la inercia se detiene: un gesto acaba en su
-       sección, pero nunca bloquea el scroll. Solo en el modo deck. */
+    // Lenis: scroll suave (lerp) que, al parar la inercia, encaja la
+    // sección más cercana sin bloquear el scroll. Solo en el modo deck.
     const lastPanelIndex = deckPanels.length - 1;
 
     let lenis = null;
@@ -351,8 +348,8 @@
         const delta = y - anchorY;
         const panelH = deckPanels[anchorIndex].offsetHeight || 1;
 
-        // Cualquier scroll real (adelante o atrás) cambia de panel; solo un
-        // micro-desplazamiento accidental (< 5% de la pantalla) se queda quieto.
+        // Solo un scroll real cambia de panel; un micro-desplazamiento
+        // (< 5% de la pantalla) se queda quieto.
         let steps = 0;
         if (delta > panelH * 0.05) {
           steps = 1;
@@ -362,8 +359,7 @@
         const targetIndex = clamp(anchorIndex + steps, 0, lastPanelIndex);
         const target = deckPanels[targetIndex].offsetTop;
 
-        // El footer es la última pantalla: una vez alcanzado, se queda para
-        // siempre (el scroll hacia abajo no lo hace marcharse).
+        // El footer es la última pantalla: una vez alcanzado, se queda para siempre.
         if (targetIndex === lastPanelIndex && steps > 0 && y >= target) {
           anchorIndex = targetIndex;
           snapping = false;
@@ -404,8 +400,8 @@
           const target = document.querySelector(href);
           if (!target) return;
           event.preventDefault();
-          // El encaje del deck debe saber a qué panel viajamos: si no, al
-          // terminar la animación "recuperaría" el índice antiguo y saltaría.
+          // El deck debe saber a qué panel viajamos: si no, al terminar la
+          // animación "recuperaría" el índice antiguo y saltaría.
           const panelIndex = Array.prototype.indexOf.call(deckPanels, target);
           if (panelIndex >= 0) {
             anchorIndex = panelIndex;
@@ -444,7 +440,7 @@
     }
   }
 
-  /* ---------- Formulario: validación + envío simulado ---------- */
+  // Formulario: validación + envío simulado vía mailto
   const form = document.getElementById("lead-form");
   const formError = document.getElementById("form-error");
   const formSuccess = document.getElementById("form-success");

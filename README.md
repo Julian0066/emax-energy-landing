@@ -64,14 +64,6 @@ emax-energy-landing/
 - **Modo presentación**: en escritorio alto, cada sección encaja en la pantalla con scroll encadenado (Lenis); el footer es la pantalla final permanente. En móvil/tarjetas con `prefers-reduced-motion` se mantiene el scroll normal.
 - **Responsive**: mobile-first, carrusel con gesto táctil y autoplay (que respeta `prefers-reduced-motion`).
 
-## 🤖 Uso de IA
-
-La IA se utilizó como **apoyo** para ideas de estructura, textos persuasivos y búsqueda de mejores prácticas de conversión, pero todo fue adaptado, corregido y justificado a mano:
-
-- Textos revisados para cumplir la solicitación y el tono del mercado español.
-- Código depurado: etiquetado balanceado, accesibilidad, validación real del formulario y estados de error.
-- Decisiones de diseño (paleta, tipografía, layout, jerarquía de CTAs) tomadas con criterio propio y documentadas arriba.
-
 ## ✅ Verificaciones
 
 - HTML con etiquetado balanceado y semántico (validado con script de `check-tags`).

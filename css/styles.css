@@ -1,10 +1,6 @@
-/* ============================================================
-   EMAX Energía — Landing de asesoramiento energético
-   Estructura: tokens de diseño → base → componentes → secciones
-   Metodología: BEM + variables CSS. Mobile first.
-   ============================================================ */
+/* EMAX Energía — Tokens, base y componentes. BEM + variables CSS, mobile first. */
 
-/* ---------- Design tokens ---------- */
+/* Design tokens */
 :root {
   /* Color */
   --color-ink: #22332f;
@@ -46,7 +42,7 @@
   --header-h: 74px;
 }
 
-/* ---------- Reset / base ---------- */
+/* Reset base */
 *,
 *::before,
 *::after {
@@ -112,7 +108,7 @@ h4 {
   margin-inline: auto;
 }
 
-/* ---------- Botones ---------- */
+/* Botones */
 .btn {
   position: relative;
   isolation: isolate;
@@ -203,7 +199,7 @@ h4 {
   width: 100%;
 }
 
-/* ---------- Cabecera ---------- */
+/* Cabecera */
 .site-header {
   position: sticky;
   top: 0;
@@ -331,7 +327,7 @@ h4 {
   width: 100%;
 }
 
-/* ---------- Secciones genéricas ---------- */
+/* Secciones genéricas */
 .section {
   position: relative;
   overflow: hidden;
@@ -346,7 +342,7 @@ h4 {
   background: radial-gradient(720px 380px at 92% 0%, rgba(14, 124, 102, 0.07), transparent 62%);
 }
 
-/* Ritmo entre secciones: hairline ámbar y glows alternados */
+/* Línea de separación entre secciones y glows alternos */
 .section::before {
   content: "";
   position: absolute;
@@ -434,7 +430,7 @@ h4 {
 }
 
 .section > .container {
-  /* contenido por encima de las decoraciones */
+  /* Deja el contenido por encima de las decoraciones */
   position: relative;
   z-index: 1;
 }
@@ -543,7 +539,7 @@ h4 {
   box-shadow: 0 0 0 4px rgba(30, 142, 110, 0.18);
 }
 
-/* ---------- Hero ---------- */
+/* Hero */
 .hero {
   position: relative;
   overflow: hidden;
@@ -600,7 +596,7 @@ h4 {
   gap: 16px;
 }
 
-/* Banda de números: confianza por resultados (franja bajo el hero) */
+/* Banda de números de confianza bajo el hero */
 .hero__stats {
   margin-top: 56px;
   padding-top: 30px;
@@ -633,7 +629,7 @@ h4 {
   color: var(--color-muted);
 }
 
-/* Visual del hero — imagen relacionada con energía / ahorro */
+/* Visual del hero */
 .hero__visual {
   position: relative;
   will-change: translate;
@@ -671,7 +667,7 @@ h4 {
   50% { transform: scale(1.35); opacity: 0.6; }
 }
 
-/* ---------- Problema ---------- */
+/* Problema */
 .pains {
   list-style: none;
   display: grid;
@@ -748,7 +744,7 @@ h4 {
   color: var(--color-muted);
 }
 
-/* ---------- Solución ---------- */
+/* Solución */
 .solucion {
   display: grid;
   grid-template-areas:
@@ -835,7 +831,7 @@ h4 {
   margin-top: 2px;
 }
 
-/* ---------- Beneficios ---------- */
+/* Beneficios */
 .benefits {
   list-style: none;
   display: grid;
@@ -1006,7 +1002,7 @@ h4 {
   max-width: 46ch;
 }
 
-/* ---------- Cómo funciona ---------- */
+/* Cómo funciona */
 .steps {
   list-style: none;
   display: grid;
@@ -1071,7 +1067,7 @@ h4 {
   color: #b9d4cd;
 }
 
-/* ---------- Comparativa ---------- */
+/* Comparativa */
 .compare {
   display: grid;
   gap: 20px;
@@ -1225,7 +1221,7 @@ h4 {
   color: #dff3ed;
 }
 
-/* ---------- Garantía ---------- */
+/* Garantía */
 .guarantee {
   margin-top: 44px;
   display: flex;
@@ -1261,7 +1257,7 @@ h4 {
   box-shadow: 0 8px 18px rgba(14, 124, 102, 0.3);
 }
 
-/* ---------- Testimonios ---------- */
+/* Testimonios */
 .rating {
   margin-top: 20px;
   display: flex;
@@ -1290,7 +1286,7 @@ h4 {
   color: var(--color-ink);
 }
 
-/* ---------- Formulario ---------- */
+/* Formulario */
 .urgency {
   display: flex;
   align-items: flex-start;
@@ -1412,7 +1408,7 @@ h4 {
   color: var(--color-brand-dark);
 }
 
-/* ---------- Franja de comercializadoras ---------- */
+/* Franja de comercializadoras */
 .compare__brands {
   margin-top: 44px;
   padding-top: 28px;
@@ -1472,7 +1468,7 @@ h4 {
   to { transform: translateX(calc(-50% - 5px)); }
 }
 
-/* ---------- FAQ ---------- */
+/* FAQ */
 .faq {
   display: grid;
   gap: 12px;
@@ -1592,8 +1588,7 @@ h4 {
   outline-offset: 2px;
 }
 
-/* ---------- Asesor (formulario) ---------- */
-/* ---------- Formulario ---------- */
+/* Sección del formulario */
 .section--form {
   position: relative;
   background:
@@ -1622,6 +1617,7 @@ h4 {
 
 .testimonios__aside img {
   display: block;
+  margin-top: 48px;
   width: min(100%, 430px);
   height: auto;
   filter: drop-shadow(0 26px 34px rgba(14, 43, 41, 0.16));
@@ -1834,7 +1830,7 @@ h4 {
   margin: 0 auto 22px;
 }
 
-/* ---------- Footer ---------- */
+/* Footer */
 .site-footer {
   position: relative;
   overflow: hidden;
@@ -1920,7 +1916,7 @@ h4 {
   font-style: italic;
 }
 
-/* ---------- Scroll reveal ---------- */
+/* Scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -1964,12 +1960,9 @@ h4 {
   }
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+/* Responsive */
 
-/* Móvil / tablet: el hero va a sangre (sin contenedor), la imagen de la
-   solución se limita para no dominar la pantalla. */
+/* Móvil/tablet: el hero va a sangre y la imagen de la solución se limita en ancho */
 @media (max-width: 1023px) {
   .testimonios__aside {
     display: none;
@@ -1987,7 +1980,7 @@ h4 {
   }
 }
 
-/* Tarjeta de reseñas: compacta y legible en móvil */
+/* Reseñas compactas en móvil */
 @media (max-width: 640px) {
   .quotes-slider__viewport,
   .quotes-slider__controls {
@@ -2089,7 +2082,7 @@ h4 {
   }
 }
 
-/* Tablet grande: el pie de página recupera sus 4 columnas */
+/* Tablet grande: footer en 4 columnas */
 @media (min-width: 900px) {
   .footer__grid {
     grid-template-columns: 1.4fr 1fr 1fr 1fr;
@@ -2103,7 +2096,7 @@ h4 {
     padding: 104px 0 116px;
   }
 
-  /* Bento: tarjeta grande (4) + tarjeta (2) / 3 tarjetas (2+2+2) / CTA ancho */
+  /* Bento de beneficios: tarjeta grande (4) + tres de (2) + CTA ancho */
   .benefits {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -2186,7 +2179,7 @@ h4 {
     padding: 36px;
   }
 
-  /* Navegación escritorio */
+  /* Nav en escritorio */
   .nav-toggle {
     display: none;
   }
@@ -2237,10 +2230,8 @@ h4 {
   }
 }
 
-/* ---------- Modo "presentación": cada sección encaja en la pantalla ----------
-   En escritorio con altura suficiente cada bloque se convierte en una "pantalla"
-   que se alinea al hacer scroll. En móvil y pantallas bajas o con
-   prefers-reduced-motion se mantiene el scroll normal. */
+/* Modo presentación: en escritorio alto, cada sección se encaja en la
+   pantalla al hacer scroll (desactivado con prefers-reduced-motion). */
 @media (min-width: 1024px) and (min-height: 740px) and (prefers-reduced-motion: no-preference) {
   html {
     scroll-snap-type: none;
@@ -2285,7 +2276,7 @@ h4 {
     margin: 0 auto;
   }
 
-  /* Compacta las secciones con más contenido para que quepan de sobra */
+  /* Compacta las secciones con más contenido para que quepan en pantalla */
   .pains__item,
   .benefit {
     padding: 20px 22px;
@@ -2332,7 +2323,7 @@ h4 {
   }
 }
 
-/* ---------- Lenis (scroll sedoso del modo presentación) ---------- */
+/* Lenis (scroll suave del modo presentación) */
 html.lenis,
 html.lenis body {
   height: auto;
