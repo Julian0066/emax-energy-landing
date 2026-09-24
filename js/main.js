@@ -411,7 +411,86 @@
           window.setTimeout(function () {
             snapping = false;
           }, 1100);
+});
+      });
+    }
+
+    // Dots de navegación del modo presentación
+    const pageDots = document.querySelector(".page-dots");
+    if (pageDots && !prefersReducedMotion) {
+      const dotLabels = {
+        hero: "Inicio",
+        problema: "El problema",
+        solucion: "Solución",
+        comparativa: "La diferencia",
+        beneficios: "Beneficios",
+        "como-funciona": "Cómo funciona",
+        testimonios: "Testimonios",
+        faq: "Dudas",
+        contacto: "Contacto",
+        "site-footer": "Pie de página"
+      };
+
+      const dotItems = [];
+      deckPanels.forEach(function (panel, i) {
+        let key = "";
+        if (panel.classList.contains("site-footer")) key = "site-footer";
+        else if (panel.classList.contains("hero")) key = "hero";
+        else if (panel.id) key = panel.id;
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "page-dots__btn";
+        btn.title = dotLabels[key] || "Sección " + (i + 1);
+        btn.setAttribute("aria-label", dotLabels[key] || "Sección " + (i + 1));
+        btn.addEventListener("click", function () {
+          goToPanel(panel, i);
         });
+        pageDots.appendChild(btn);
+        dotItems.push({ panel: panel, btn: btn });
+      });
+
+      function goToPanel(panel, i) {
+        anchorIndex = i;
+        setActiveDot(i);
+        snapping = true;
+        if (lenis) {
+          const isFooter = panel.classList.contains("site-footer");
+          lenis.scrollTo(panel, { duration: isFooter ? 3.5 : 0.9, offset: 0 });
+          window.setTimeout(function () {
+            snapping = false;
+          }, isFooter ? 3800 : 1100);
+        } else {
+          panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function setActiveDot(i) {
+        dotItems.forEach(function (item, k) {
+          item.btn.classList.toggle("is-active", k === i);
+          item.btn.setAttribute("aria-current", k === i ? "true" : "false");
+        });
+      }
+
+      const dotsObserver = new IntersectionObserver(
+        function (entries) {
+          let best = null;
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting && (!best || entry.intersectionRatio > best.ratio)) {
+              best = { panel: entry.target, ratio: entry.intersectionRatio };
+            }
+          });
+          if (best) {
+            dotItems.forEach(function (item, i) {
+              if (item.panel === best.panel) setActiveDot(i);
+            });
+          }
+        },
+        { threshold: [0, 0.15, 0.3, 0.5, 0.7, 0.85, 1] }
+      );
+
+      dotItems.forEach(function (item) {
+        dotsObserver.observe(item.panel);
       });
     }
 
