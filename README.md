@@ -29,8 +29,8 @@ emax-energy-landing/
 │   └── styles.css    # Tokens + base + componentes + responsive
 ├── js/
 │   └── main.js       # Interacciones: reveal, deck, carrusel, formulario
-├── img/              # Imágenes optimizadas (JPG, listas para producción)
-│   ├── hero.jpg      # Hero (758×758, comprimida JPG)
+├── img/              # Imágenes optimizadas (JPG/PNG, listas para producción)
+│   ├── hero.png      # Hero (758×758, PNG con fondo transparente)
 │   ├── tiempo.png    # Solución (1254×1254, se conserva PNG por su transparencia)
 │   ├── avatar-carmen.jpg
 │   ├── avatar-javier.jpg
@@ -59,7 +59,7 @@ emax-energy-landing/
 - **Cifras y prueba social**: números en el hero ("+250 €/año"), banda de resultados, ratings y testimonios con euros — porque los datos concretos convierten más que los adjetivos.
 - **Reversión de riesgo**: "Gratis · Sin permanencia · Sin compromiso" y garantía EMAX por escrito.
 - **Objeción resuelta antes de la conversión**: la FAQ va justo antes del formulario.
-- **Rendimiento como palanca de conversión**: imágenes convertidas y comprimidas a JPG (hero pasa de ~930 KB a 60 KB y la de solución de ~1,3 MB a 68 KB), `loading="lazy"`, `fetchpriority="high"` en el hero.
+- **Rendimiento como palanca de conversión**: imágenes optimizadas (hero comprimida manteniendo transparencia en PNG), `loading="lazy"`, `fetchpriority="high"` en el hero.
 - **Texturas sutiles**: puntos en degradé en todas las secciones (familia visual coherente, muy suaves para no competir con el contenido).
 - **Modo presentación**: en escritorio alto, cada sección encaja en la pantalla con scroll encadenado (Lenis); el footer es la pantalla final permanente. En móvil/tarjetas con `prefers-reduced-motion` se mantiene el scroll normal.
 - **Responsive**: mobile-first, carrusel con gesto táctil y autoplay (que respeta `prefers-reduced-motion`).

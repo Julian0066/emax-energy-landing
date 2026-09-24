@@ -662,11 +662,6 @@ h4 {
   50% { transform: translateY(-8px); }
 }
 
-@keyframes hero-rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
@@ -1955,9 +1950,6 @@ h4 {
   .hero__visual.is-visible {
     animation: none;
   }
-  .hero__title {
-    animation: none;
-  }
   .compare__brands-track {
     animation: none;
     width: 100%;
@@ -1986,39 +1978,6 @@ h4 {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-  }
-
-  /* En móvil la imagen del hero va justo debajo del título */
-  .hero__content {
-    display: contents;
-  }
-
-  .hero__visual {
-    z-index: 0;
-  }
-
-  .hero__title,
-  .hero__subtitle,
-  .hero__actions {
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero__title {
-    order: 1;
-    animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  .hero__visual {
-    order: 2;
-  }
-
-  .hero__subtitle {
-    order: 3;
-  }
-
-  .hero__actions {
-    order: 4;
   }
 
   .solucion__media {
