@@ -619,35 +619,36 @@ h4 {
   color: var(--color-success);
 }
 
-/* Banda de números: confianza por resultados */
+/* Banda de números: confianza por resultados (franja bajo el hero) */
 .hero__stats {
-  margin-top: 38px;
+  margin-top: 56px;
   padding-top: 30px;
   border-top: 1px solid var(--color-border);
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 24px 56px;
-  justify-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 64px;
+  align-items: baseline;
 }
 
 .hero__stat {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: baseline;
+  gap: 12px;
 }
 
 .hero__stat-value {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--color-brand-dark);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .hero__stat-label {
-  font-size: 0.84rem;
+  font-size: 0.92rem;
   color: var(--color-muted);
 }
 
@@ -1975,6 +1976,18 @@ h4 {
 
   .section__head {
     margin-bottom: clamp(20px, 3vh, 32px);
+  }
+
+  .hero__visual img {
+    max-height: 62svh;
+    width: auto;
+    margin-inline: auto;
+  }
+
+  .hero__stats {
+    margin-top: 36px;
+    padding-top: 24px;
+    gap: 26px 56px;
   }
 
   .solucion__media img {
