@@ -1530,6 +1530,12 @@ h4 {
   display: none;
 }
 
+.mobile-cta.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .quotes-slider__controls {
   display: flex;
   align-items: center;
@@ -2015,6 +2021,60 @@ h4 {
 
   .site-footer {
     padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Tarjeta de reseñas: compacta y legible en móvil */
+@media (max-width: 640px) {
+  .quotes-slider__viewport,
+  .quotes-slider__controls {
+    margin-top: 18px;
+  }
+
+  .quote {
+    padding: 26px 22px;
+    gap: 16px;
+  }
+
+  .quote::before {
+    font-size: 3.2rem;
+    top: -14px;
+    left: 16px;
+    width: 40px;
+    height: 34px;
+  }
+
+  .quote blockquote {
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+
+  .quote figcaption {
+    padding-top: 14px;
+    gap: 12px;
+  }
+
+  .quote__avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .quotes-slider__btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .quotes-slider__dots {
+    gap: 6px;
+  }
+
+  .quotes-slider__dots .quotes-slider-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .quotes-slider__dots .quotes-slider-dot.is-active {
+    width: 22px;
   }
 }
 
