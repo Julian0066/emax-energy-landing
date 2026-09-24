@@ -380,28 +380,28 @@ h4 {
 
 #problema {
   background:
-    radial-gradient(rgba(233, 162, 59, 0.05) 1px, transparent 1.6px),
+    radial-gradient(rgba(233, 162, 59, 0.11) 1px, transparent 1.7px),
     linear-gradient(180deg, #f6eedc 0%, #f2e8d3 100%);
   background-size: 26px 26px, 100% 100%;
 }
 
 #solucion {
   background:
-    radial-gradient(rgba(14, 124, 102, 0.05) 1px, transparent 1.6px),
+    radial-gradient(rgba(14, 124, 102, 0.10) 1px, transparent 1.7px),
     linear-gradient(180deg, #e7efe8 0%, #eef4ed 100%);
   background-size: 30px 30px, 100% 100%;
 }
 
 #comparativa {
   background:
-    radial-gradient(rgba(93, 74, 46, 0.045) 1px, transparent 1.6px),
+    radial-gradient(rgba(93, 74, 46, 0.09) 1px, transparent 1.7px),
     linear-gradient(180deg, #efe4cf 0%, #f7f0e0 100%);
   background-size: 26px 26px, 100% 100%;
 }
 
 #testimonios {
   background:
-    radial-gradient(rgba(14, 124, 102, 0.045) 1px, transparent 1.6px),
+    radial-gradient(rgba(14, 124, 102, 0.09) 1px, transparent 1.7px),
     linear-gradient(180deg, #ebf1ea 0%, #f1f6f0 100%);
   background-size: 24px 24px, 100% 100%;
 }
@@ -409,7 +409,7 @@ h4 {
 #beneficios {
   background-color: #f6efdf;
   background-image:
-    radial-gradient(rgba(14, 124, 102, 0.05) 1px, transparent 1.5px),
+    radial-gradient(rgba(14, 124, 102, 0.10) 1px, transparent 1.7px),
     radial-gradient(620px 300px at 8% 0%, rgba(233, 162, 59, 0.09), transparent 55%),
     linear-gradient(180deg, #ffffff 0%, #f6efdf 100%);
   background-size: 26px 26px, 100% 100%, 100% 100%;
@@ -1409,7 +1409,7 @@ h4 {
 /* ---------- Formulario ---------- */
 .section--form {
   background:
-    radial-gradient(rgba(14, 124, 102, 0.05) 1px, transparent 1.6px),
+    radial-gradient(rgba(14, 124, 102, 0.10) 1px, transparent 1.7px),
     radial-gradient(700px 360px at 92% 0%, rgba(14, 124, 102, 0.08), transparent 60%),
     linear-gradient(165deg, #dde8e1 0%, #f1ead9 70%);
   background-size: 28px 28px, 100% 100%, 100% 100%;
