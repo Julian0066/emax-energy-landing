@@ -30,8 +30,8 @@ emax-energy-landing/
 ├── js/
 │   └── main.js       # Interacciones: reveal, deck, carrusel, formulario
 ├── img/              # Imágenes optimizadas (JPG, listas para producción)
-│   ├── hero.jpg      # Hero (758×758)
-│   ├── tiempo.jpg    # Solución (903×903)
+│   ├── hero.jpg      # Hero (758×758, comprimida JPG)
+│   ├── tiempo.png    # Solución (1254×1254, se conserva PNG por su transparencia)
 │   ├── avatar-carmen.jpg
 │   ├── avatar-javier.jpg
 │   └── avatar-laura.jpg
